@@ -1,0 +1,2583 @@
+{
+  "nodes": [
+    {
+      "id": "open_machine",
+      "label": "Open Machine",
+      "type": "project-expression",
+      "cluster": "core",
+      "tags": [
+        "mediation",
+        "cognition",
+        "posthuman",
+        "governance",
+        "experience"
+      ],
+      "era": "contemporary",
+      "size": 28,
+      "summary": "Open Machine is a project for understanding and designing technologies through the lens of philosophical immanence. Technologies here are understood in the broadest sense — digital tools, narrative systems, ritual and psychedelic practices, somatic and corporeal techniques, musical and artistic forms, sexual and relational technologies, and any interface that shapes how reality is encountered. The lineage grounds a non-transcendent design philosophy.",
+      "why_it_matters": "The convergence point where the philosophy of immanence meets the full spectrum of human technologies — digital, narrative, chemical, corporeal, sexual, cultural, artistic. Open Machine asks: what would it mean to design and deploy technologies as if there is no outside — no transcendent authority, no external ground, only the immanent field of relations?",
+      "x_hint": 0,
+      "y_hint": 0
+    },
+    {
+      "id": "wiener",
+      "label": "Norbert Wiener",
+      "type": "thinker",
+      "cluster": "cybernetics",
+      "tags": [
+        "cybernetics",
+        "systems",
+        "control",
+        "communication"
+      ],
+      "era": "mid-20c",
+      "size": 18,
+      "birth_year": 1894,
+      "death_year": 1964,
+      "summary": "Founder of cybernetics. Articulated feedback, control, and communication as immanent principles shared by machines, organisms, and societies — the first rigorous framework for designing technologies that respond to their environment from within, without external command. Cybernetics is the engineering science of immanence.",
+      "why_it_matters": "Cybernetics is the founding science of immanent technology: feedback means a system acts on information generated within its own interactions. This applies equally to governance structures, therapeutic practices, organisms, ecosystems, and narrative — anywhere that self-regulation arises from within a relational field.",
+      "works": [
+        "Cybernetics (1948)",
+        "The Human Use of Human Beings (1950)"
+      ],
+      "x_hint": -350,
+      "y_hint": -220,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/Norbert_Wiener.png",
+      "key_year": 1948
+    },
+    {
+      "id": "ashby",
+      "label": "Ross Ashby",
+      "type": "thinker",
+      "cluster": "cybernetics",
+      "tags": [
+        "cybernetics",
+        "regulation",
+        "variety"
+      ],
+      "era": "mid-20c",
+      "size": 16,
+      "birth_year": 1903,
+      "death_year": 1972,
+      "summary": "Cybernetician who developed the law of requisite variety — a system can only regulate its environment by matching it in complexity — and demonstrated it through the homeostat, a physical technology of adaptive self-regulation. Requisite variety is the first design principle for immanent technology.",
+      "why_it_matters": "Requisite variety is a design law for immanent technologies: any governance system, therapeutic practice, or machine can only navigate a complex environment by developing complexity matching what it engages. Under-complexity in a technology means domination or failure, not regulation.",
+      "works": [
+        "Design for a Brain (1952)",
+        "Introduction to Cybernetics (1956)"
+      ],
+      "x_hint": -420,
+      "y_hint": -130,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/W._Ross_Ashby_%281948%29.jpg",
+      "key_year": 1956
+    },
+    {
+      "id": "bateson",
+      "label": "Gregory Bateson",
+      "type": "thinker",
+      "cluster": "cybernetics",
+      "tags": [
+        "cybernetics",
+        "ecology",
+        "mind",
+        "communication"
+      ],
+      "era": "mid-20c",
+      "size": 20,
+      "birth_year": 1904,
+      "death_year": 1980,
+      "summary": "Anthropologist and cybernetician who developed the ecology of mind — understanding mental process as distributed across organism and environment, not housed in individual skulls. His double bind theory, metacommunication, and concept of deuterolearning opened cybernetics toward culture, therapy, ecology, and the anthropology of how patterns of relation organize experience.",
+      "why_it_matters": "Bateson shows that mind, culture, and ecology are immanent technologies — patterns of relation and communication that organize experience without any central controller. His work is the bridge between feedback engineering and the study of narrative, therapeutic, cultural, and ecological forms as self-organizing systems.",
+      "works": [
+        "Steps to an Ecology of Mind (1972)",
+        "Mind and Nature (1979)"
+      ],
+      "x_hint": -290,
+      "y_hint": -270,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Mary_Catherine_Bateson_%26_Sergio_Manghi_at_a_conference%2C_2004_%28cropped_-_Gregory_Bateson%29.jpg",
+      "key_year": 1972
+    },
+    {
+      "id": "beer",
+      "label": "Stafford Beer",
+      "type": "thinker",
+      "cluster": "cybernetics",
+      "tags": [
+        "cybernetics",
+        "governance",
+        "organization"
+      ],
+      "era": "mid-20c",
+      "size": 17,
+      "birth_year": 1926,
+      "death_year": 2002,
+      "summary": "Applied cybernetics to organizational and governance design, developing the Viable System Model. His Project Cybersyn (Chile, 1971–73) was the most ambitious attempt in history to govern a national economy through real-time distributed cybernetic feedback — an actual experiment in immanent governance technology at national scale.",
+      "why_it_matters": "Beer demonstrates what immanent governance technology looks like in practice: distributed, feedback-based, viable without centralized command. Project Cybersyn remains the most radical real-world instantiation of cybernetic governance and the direct ancestor of contemporary distributed coordination experiments.",
+      "works": [
+        "Brain of the Firm (1972)",
+        "Designing Freedom (1974)"
+      ],
+      "x_hint": -380,
+      "y_hint": -60,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Stafford_Beer_1990.png",
+      "key_year": 1972
+    },
+    {
+      "id": "maturana",
+      "label": "Humberto Maturana",
+      "type": "thinker",
+      "cluster": "cybernetics",
+      "tags": [
+        "autopoiesis",
+        "cognition",
+        "systems"
+      ],
+      "era": "late-20c",
+      "size": 17,
+      "birth_year": 1928,
+      "death_year": 2021,
+      "summary": "Biologist who developed autopoiesis — living systems as self-producing, operationally closed networks that generate their own organization from within. Cognition, for Maturana, is a biological technology of self-maintenance: the organism enacts its world through the circularity of its own operations.",
+      "why_it_matters": "Autopoiesis is the biological template for immanent technology: life itself is a technology of self-organization, producing its own conditions from within. This reframes every biotechnology, every therapeutic practice, every somatic technique — as interventions into a self-producing living system, not operations on passive matter.",
+      "works": [
+        "Autopoiesis and Cognition (1980)"
+      ],
+      "x_hint": -220,
+      "y_hint": -190,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/Humberto_Maturana-FILSA2015.jpg",
+      "key_year": 1972
+    },
+    {
+      "id": "varela",
+      "label": "Francisco Varela",
+      "type": "thinker",
+      "cluster": "cybernetics",
+      "tags": [
+        "enaction",
+        "cognition",
+        "systems",
+        "phenomenology"
+      ],
+      "era": "late-20c",
+      "size": 19,
+      "birth_year": 1946,
+      "death_year": 2001,
+      "summary": "Extended autopoiesis into enaction — the view that cognition emerges through bodily, sensorimotor engagement with the world. The body is the primary technology of world-making: it enacts its experiential reality through active participation. Contemplative practice was, for Varela, a first-person technology for investigating this from the inside.",
+      "why_it_matters": "Enaction grounds all technology in the body: the organism itself is the first technology of world-making, and every other tool or system extends this primary bodily engagement. This is the philosophical foundation for somatic practices, contemplative and psychedelic technologies, body-based design, and any approach that works through and with lived bodily experience.",
+      "works": [
+        "The Embodied Mind (1991)",
+        "Ethical Know-How (1999)"
+      ],
+      "x_hint": -160,
+      "y_hint": -140,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Francisco_Varela.jpg",
+      "key_year": 1991
+    },
+    {
+      "id": "levin",
+      "label": "Michael Levin",
+      "type": "thinker",
+      "cluster": "cybernetics",
+      "tags": [
+        "cognition",
+        "agency",
+        "biology",
+        "nonhuman"
+      ],
+      "era": "contemporary",
+      "size": 16,
+      "summary": "Biologist studying basal cognition and bioelectricity — how goal-directed behavior and distributed intelligence operate across living tissues at scales far below the brain. Bodies are ancient cognitive technologies whose immanent protocols and self-organizing capacities predate nervous systems by billions of years.",
+      "why_it_matters": "Levin reveals that biological bodies are multi-scale cognitive technologies: organs, tissues, and cells each run their own forms of immanent intelligence. This opens radical possibilities for biomedical, regenerative, and living-system technologies grounded in the body's own distributed agency.",
+      "x_hint": -100,
+      "y_hint": -230,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Michael_Levin_2024.jpg",
+      "key_year": 2019
+    },
+    {
+      "id": "walker",
+      "label": "Sara Walker",
+      "type": "thinker",
+      "cluster": "cybernetics",
+      "tags": [
+        "complexity",
+        "assembly",
+        "life",
+        "information"
+      ],
+      "era": "contemporary",
+      "size": 15,
+      "summary": "Theoretical physicist exploring life through assembly theory — the idea that living matter is uniquely distinguished by its historical, information-bearing structure. Life is matter that has become a technology of its own history: it accumulates, stores, and transmits the record of what has worked.",
+      "why_it_matters": "Assembly theory provides a scientific grounding for information as an immanent property of matter — directly relevant to understanding how both biological and computational technologies accrete historicized structure and how the boundary between the living and the technological is fundamentally historical.",
+      "x_hint": -50,
+      "y_hint": -300,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/83/Sara_Imari_Walker_by_Christopher_Michel_in_2025.jpg",
+      "key_year": 2022
+    },
+    {
+      "id": "distributed_cognition",
+      "label": "Distributed Cognition",
+      "type": "concept",
+      "cluster": "cybernetics",
+      "tags": [
+        "cognition",
+        "systems",
+        "environment"
+      ],
+      "era": "late-20c",
+      "size": 14,
+      "summary": "Cognitive science framework showing that cognition is distributed across bodies, tools, environments, and social systems — enacted through the full sociotechnical assemblage as a whole. Every tool, notation, interface, and institution is a cognitive technology that extends and reshapes collective intelligence.",
+      "why_it_matters": "Cognition is a property of the whole system, spread across its tools and environments. Every technology is a cognitive technology that restructures what can be thought and done collectively. Distributed cognition is the empirical foundation for treating tools, interfaces, and environments as integral parts of the cognitive-technological field.",
+      "x_hint": -200,
+      "y_hint": -340
+    },
+    {
+      "id": "enaction",
+      "label": "Enaction / Sense-Making",
+      "type": "concept",
+      "cluster": "cybernetics",
+      "tags": [
+        "cognition",
+        "embodiment",
+        "phenomenology"
+      ],
+      "era": "late-20c",
+      "size": 14,
+      "summary": "Framework in which cognition emerges from active, embodied engagement — the body as the primary technology of world-making. Perception is immanent enaction: the organism brings forth its experiential world through sensorimotor participation. Every act of knowing is a technology of contact.",
+      "why_it_matters": "Enaction grounds all technology in the body: before any external instrument, the organism itself is the first technology of world-making. This is the philosophical foundation for somatic practices, contemplative and psychedelic technologies, body-based design, and any approach that works through and with lived bodily experience.",
+      "x_hint": -100,
+      "y_hint": -90
+    },
+    {
+      "id": "whitehead",
+      "label": "Alfred North Whitehead",
+      "type": "thinker",
+      "cluster": "process",
+      "tags": [
+        "process",
+        "ontology",
+        "becoming"
+      ],
+      "era": "early-20c",
+      "size": 18,
+      "birth_year": 1861,
+      "death_year": 1947,
+      "summary": "Philosopher who developed process philosophy — reality as constituted by events and actual occasions of experience, a universe of processes each inheriting from and contributing to the next. His process theology posits an immanent God affected by and internal to the world: divinity as the lure of creative advance.",
+      "why_it_matters": "Whitehead provides the ontological grammar for a world constituted by events — each entity an actual occasion of experience, a moment of creativity that inherits from its past and contributes to its future. This is the philosophical ground for treating technologies as participants in an ongoing process of co-creation.",
+      "works": [
+        "Process and Reality (1929)",
+        "Adventures of Ideas (1933)"
+      ],
+      "x_hint": -380,
+      "y_hint": 100,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/ANWhitehead.jpg",
+      "key_year": 1929
+    },
+    {
+      "id": "simondon",
+      "label": "Gilbert Simondon",
+      "type": "thinker",
+      "cluster": "process",
+      "tags": [
+        "individuation",
+        "technology",
+        "process"
+      ],
+      "era": "mid-20c",
+      "size": 19,
+      "birth_year": 1924,
+      "death_year": 1989,
+      "summary": "French philosopher who developed both the concept of individuation — beings come into form through metastable processes, they do not pre-exist the conditions that bring them forth — and a rigorous philosophy of technical objects. Machines and organisms share a logic of metastability: they are ongoing processes of individuation, each with its own mode of being.",
+      "why_it_matters": "Simondon grounds an understanding of technology as a genuine participant in existence, with its own mode of being and its own relationship to a preindividual field of potential. Machines individuate just as organisms do — and understanding any technology requires attending to its process of individuation, its history of becoming what it is.",
+      "works": [
+        "Individuation in Light of Notions of Form and Information (1958)",
+        "On the Mode of Existence of Technical Objects (1958)"
+      ],
+      "x_hint": -310,
+      "y_hint": 190,
+      "key_year": 1958
+    },
+    {
+      "id": "deleuze",
+      "label": "Gilles Deleuze",
+      "type": "thinker",
+      "cluster": "process",
+      "tags": [
+        "process",
+        "difference",
+        "becoming"
+      ],
+      "era": "late-20c",
+      "size": 20,
+      "birth_year": 1925,
+      "death_year": 1995,
+      "summary": "Philosopher of difference and multiplicity who developed the plane of immanence as philosophy's fundamental concept. With Guattari, developed schizoanalysis — a practical technology for mapping and transforming unconscious investments — and a micropolitics of desire. Concepts, for Deleuze, are tools: philosophy is itself a technology of thought.",
+      "why_it_matters": "The Deleuzian framework is explicitly a technology: concepts are created to intervene, not to represent. Schizoanalysis, micropolitics, and cartography are practical technologies for transforming desire, social organization, and the conditions of possibility — applicable in clinical, artistic, political, and digital contexts simultaneously.",
+      "works": [
+        "Difference and Repetition (1968)",
+        "Anti-Oedipus (1972, with Guattari)"
+      ],
+      "x_hint": -260,
+      "y_hint": 130,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Gilles_Deleuze%2C_Nietzsche_1973.jpg",
+      "key_year": 1968
+    },
+    {
+      "id": "guattari",
+      "label": "Félix Guattari",
+      "type": "thinker",
+      "cluster": "process",
+      "tags": [
+        "assemblage",
+        "ecology",
+        "subjectivity"
+      ],
+      "era": "late-20c",
+      "size": 18,
+      "birth_year": 1930,
+      "death_year": 1992,
+      "summary": "Philosopher and clinician who developed ecosophy — the idea that ecological, social, and psychic dimensions form an interconnected field requiring simultaneous transformation — and a machinic philosophy in which the unconscious is a political technology. His clinical work at La Borde psychiatric clinic was philosophy made institutional practice.",
+      "why_it_matters": "Guattari's three ecologies — mental, social, and environmental — must be transformed together: no digital technology redesign is complete without accompanying psychic and social transformation. His ecosophy is a technology of integrated transformation applicable to any field in which consciousness, collectivity, and environment interpenetrate.",
+      "works": [
+        "The Three Ecologies (1989)",
+        "Chaosmosis (1992)"
+      ],
+      "x_hint": -200,
+      "y_hint": 210,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/%E3%83%95%E3%82%A7%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B9%E3%83%BB%E3%82%AC%E3%82%BF%E3%83%AA.jpg",
+      "key_year": 1972
+    },
+    {
+      "id": "massumi",
+      "label": "Brian Massumi",
+      "type": "thinker",
+      "cluster": "process",
+      "tags": [
+        "affect",
+        "process",
+        "emergence"
+      ],
+      "era": "contemporary",
+      "size": 16,
+      "summary": "Philosopher who extended Deleuzian process thought into affect theory — showing that affect operates below the threshold of perception and cognition, constituting experience before it is captured by any representation. Affect is the primary political technology: power increasingly operates by modulating felt experience before it reaches conscious deliberation.",
+      "why_it_matters": "Massumi demonstrates that the most potent political and commercial technologies don't work through rational persuasion but through affective modulation — shaping felt experience below the threshold of conscious representation. This is the foundational insight for Open Machine's approach to experience design, media analysis, and the politics of attention.",
+      "works": [
+        "Parables for the Virtual (2002)",
+        "Politics of Affect (2015)"
+      ],
+      "x_hint": -150,
+      "y_hint": 280,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Ten_Years_of_Terror%2C_Brian_Massumi.jpg",
+      "key_year": 2002
+    },
+    {
+      "id": "deland",
+      "label": "Manuel DeLanda",
+      "type": "thinker",
+      "cluster": "process",
+      "tags": [
+        "assemblage",
+        "materialism",
+        "emergence"
+      ],
+      "era": "contemporary",
+      "size": 15,
+      "summary": "Philosopher who applied Deleuzian ontology to produce a rigorous materialist assemblage theory — showing how historical processes, not essences, generate social institutions, species, cities, and technologies. Every assemblage is a contingent achievement, always capable of being re-assembled differently.",
+      "why_it_matters": "Every social form, institution, technology, and organism is the product of historical processes of assemblage, with no essential nature prior to those processes. This grounds a processual, immanent approach to understanding and redesigning institutions and technologies — they can always be assembled differently.",
+      "works": [
+        "A Thousand Years of Nonlinear History (1997)",
+        "Assemblage Theory (2016)"
+      ],
+      "x_hint": -350,
+      "y_hint": 280,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Manuel_De_Landa_2011.jpg",
+      "key_year": 1997
+    },
+    {
+      "id": "manning",
+      "label": "Erin Manning",
+      "type": "thinker",
+      "cluster": "process",
+      "tags": [
+        "movement",
+        "relation",
+        "process"
+      ],
+      "era": "contemporary",
+      "size": 14,
+      "summary": "Researcher whose work on minor gestures, neurodiversity, and movement develops form-as-movement — relational form emerges through movement, never preceding it. Her processual pedagogy and neurological activism treat collective emergence as an immanent technology of encounter.",
+      "why_it_matters": "Manning's processual work is a technology of collective emergence: beginning from movement and relation, from encounter and process. Her work has direct application to education, performance, somatic design, and any collaborative practice oriented toward emergent form.",
+      "works": [
+        "Always More Than One (2013)",
+        "The Minor Gesture (2016)"
+      ],
+      "x_hint": -100,
+      "y_hint": 190,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Erin_Manning.jpg",
+      "key_year": 2013
+    },
+    {
+      "id": "individuation",
+      "label": "Individuation",
+      "type": "concept",
+      "cluster": "process",
+      "tags": [
+        "process",
+        "becoming",
+        "formation"
+      ],
+      "era": "mid-20c",
+      "size": 13,
+      "summary": "The ongoing process through which beings emerge — beings come into form through metastable processes, always emerging rather than arriving pre-formed. Both organisms and technical objects individuate: they are ongoing processes of becoming, each with a specific history of individuation that constitutes what they are.",
+      "why_it_matters": "Individuation shows that neither organisms nor technologies have fixed essences — they emerge through process. Every technology carries a specific history of individuation: its identity is achieved, always capable of resuming at a different metastability.",
+      "x_hint": -320,
+      "y_hint": 340
+    },
+    {
+      "id": "assemblage",
+      "label": "Assemblage",
+      "type": "concept",
+      "cluster": "process",
+      "tags": [
+        "composition",
+        "emergence",
+        "relation"
+      ],
+      "era": "late-20c",
+      "size": 14,
+      "summary": "A relational ontological unit composed of heterogeneous elements — human and nonhuman, material and expressive, technical and natural — with no fixed identity. Every technology is an assemblage: its capacity is a function of its relational configuration, not intrinsic properties, and it can be taken apart and reassembled to produce different capacities.",
+      "why_it_matters": "Assemblage thinking reveals that technological capacity is always relational — it emerges from how components are connected and related, not from the properties of any component in isolation. This is the ontological ground for understanding technologies as sociotechnical formations that can be reconfigured by changing their internal and external relations.",
+      "x_hint": -180,
+      "y_hint": 360
+    },
+    {
+      "id": "becoming",
+      "label": "Becoming",
+      "type": "concept",
+      "cluster": "process",
+      "tags": [
+        "process",
+        "transformation",
+        "ontology"
+      ],
+      "era": "late-20c",
+      "size": 13,
+      "summary": "Ontological priority of change, transformation, and differentiation over fixed being. All immanent technologies — biological, cultural, ritual, computational — participate in ongoing processes of becoming, incapable of settling into fixed states. To design with becoming is to design for continuous transformation.",
+      "why_it_matters": "Becoming is the fundamental mode of immanent reality — and thus the fundamental condition of immanent technology. No technology remains what it was designed to be: it enters into becomings with its users, environments, and other systems. Designing for becoming means building openness to transformation into the technology itself.",
+      "x_hint": -270,
+      "y_hint": 390
+    },
+    {
+      "id": "mcluhan",
+      "label": "Marshall McLuhan",
+      "type": "thinker",
+      "cluster": "media",
+      "tags": [
+        "media",
+        "perception",
+        "environments"
+      ],
+      "era": "mid-20c",
+      "size": 19,
+      "birth_year": 1911,
+      "death_year": 1980,
+      "summary": "Media theorist who argued that every medium is an extension of the body — a technology that externalizes and amplifies a human faculty while reshaping the sensory ratios, social forms, and patterns of attention that accompany it. From the wheel (extension of the foot) to the alphabet (extension of the eye) to digital networks (extension of the nervous system), media are corporeal technologies.",
+      "why_it_matters": "McLuhan's foundational insight is that all technologies are corporeal technologies: extensions of sensory and cognitive capacities that reshape the body's relationship to its environment. This makes every medium — narrative, film, digital, ritual, chemical — a transformation of embodied experience, placing all technologies within a single immanent field.",
+      "works": [
+        "Understanding Media (1964)",
+        "The Medium is the Massage (1967)"
+      ],
+      "x_hint": 350,
+      "y_hint": -240,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Marshall_McLuhan.jpg",
+      "key_year": 1964
+    },
+    {
+      "id": "kittler",
+      "label": "Friedrich Kittler",
+      "type": "thinker",
+      "cluster": "media",
+      "tags": [
+        "media",
+        "technical systems",
+        "discourse"
+      ],
+      "era": "late-20c",
+      "size": 18,
+      "birth_year": 1943,
+      "death_year": 2011,
+      "summary": "German media theorist who argued that technical media systems — gramophone, film, typewriter, and their digital successors — are technologies that record, transmit, and process the real in ways that exceed and precede human intentionality. Discourse networks are material-technical formations that determine what can be said, stored, and experienced.",
+      "why_it_matters": "Kittler reveals that technical media are autonomous technologies that transform what can be thought, said, and experienced. Every discourse network — including those built from narrative, code, and protocol — is a material apparatus that shapes the conditions of possible experience.",
+      "works": [
+        "Gramophone, Film, Typewriter (1986)",
+        "Discourse Networks (1985)"
+      ],
+      "x_hint": 420,
+      "y_hint": -140,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Friedrich_Kittler_%282009%29.png",
+      "key_year": 1986
+    },
+    {
+      "id": "stiegler",
+      "label": "Bernard Stiegler",
+      "type": "thinker",
+      "cluster": "media",
+      "tags": [
+        "technics",
+        "memory",
+        "temporality"
+      ],
+      "era": "contemporary",
+      "size": 18,
+      "birth_year": 1952,
+      "death_year": 2020,
+      "summary": "Philosopher who argued that technics — exteriorized memory, from flint tools to digital platforms — is constitutive of what it means to be human. Humans are always already technical beings: every practice of memory, attention, and desire is a technics. Technology is the condition of human existence, its very medium.",
+      "why_it_matters": "Stiegler makes the most radical claim in this lineage: technology is the condition of human being. This means every practice of attention — reading, ritual, psychedelics, digital media — is a pharmacological technology: simultaneously therapeutic and toxic, depending on how it is cultivated.",
+      "works": [
+        "Technics and Time (1994)",
+        "For a New Critique of Political Economy (2010)"
+      ],
+      "x_hint": 280,
+      "y_hint": -200,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/2016_HTNM_Bernard_Stiegler_%2830301265471%29_%28cropped%29.jpg",
+      "key_year": 1994
+    },
+    {
+      "id": "flusser",
+      "label": "Vilém Flusser",
+      "type": "thinker",
+      "cluster": "media",
+      "tags": [
+        "apparatus",
+        "image",
+        "communication"
+      ],
+      "era": "late-20c",
+      "size": 16,
+      "birth_year": 1920,
+      "death_year": 1991,
+      "summary": "Philosopher of communication who developed the concept of the apparatus — a programmed system that constrains and channels gesture, producing technical images and programmed behavior. Photography, cinema, and digital media are apparatuses: they shape what can be imagined by structuring what can be done.",
+      "why_it_matters": "The apparatus concept reveals how technical systems program human gesture and imagination — every interface, every institutional form, every medium is an apparatus that shapes the field of possible action and experience. Understanding apparatus logic is prerequisite to any critical or creative engagement with technology.",
+      "works": [
+        "Towards a Philosophy of Photography (1983)",
+        "Into the Universe of Technical Images (1985)"
+      ],
+      "x_hint": 390,
+      "y_hint": -70,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Vilem_Flusser_1940.jpg",
+      "key_year": 1983
+    },
+    {
+      "id": "foucault",
+      "label": "Michel Foucault",
+      "type": "thinker",
+      "cluster": "media",
+      "tags": [
+        "apparatus",
+        "power",
+        "subject formation"
+      ],
+      "era": "late-20c",
+      "size": 20,
+      "birth_year": 1926,
+      "death_year": 1984,
+      "summary": "Philosopher who analyzed the dispositifs — heterogeneous apparatuses of power-knowledge — through which subjects are produced and governed. Crucially developed the concept of 'technologies of the self': the practices through which individuals act on their own bodies, souls, thoughts, and conduct to transform themselves — including ascetic, confessional, somatic, and sexual techniques.",
+      "why_it_matters": "Foucault's 'technologies of the self' is the explicit conceptual bridge between immanent philosophy and the broad conception of technology that includes corporeal, sexual, and cultural practices. Every practice of self-transformation — meditation, therapy, psychedelics, bodywork, sexual practice — is a technology of the self operating within a broader apparatus of power.",
+      "works": [
+        "Discipline and Punish (1975)",
+        "The History of Sexuality (1976)"
+      ],
+      "x_hint": 230,
+      "y_hint": -280,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Photo_of_Michel_Foucault_on_1970_dustjacket_of_The_Order_of_Things.jpg",
+      "key_year": 1975
+    },
+    {
+      "id": "apparatus",
+      "label": "Apparatus / Dispositif",
+      "type": "concept",
+      "cluster": "media",
+      "tags": [
+        "power",
+        "infrastructure",
+        "subject"
+      ],
+      "era": "late-20c",
+      "size": 14,
+      "summary": "The heterogeneous infrastructure — discourses, institutions, architectures, bodies, regulations, and technologies — through which subjectivity and conduct are shaped. The dispositif produces its effects through the design of conditions: environments, architectures, and programs that make certain behaviors natural and others impossible.",
+      "why_it_matters": "Every designed environment is an apparatus. The apparatus concept reveals that governance, design, and experience-shaping always work through heterogeneous assemblages of material and discursive practices — and that understanding any technology requires mapping its full apparatus, not just its declared function.",
+      "x_hint": 310,
+      "y_hint": -360
+    },
+    {
+      "id": "technologies_of_experience",
+      "label": "Technologies of Experience",
+      "type": "concept",
+      "cluster": "media",
+      "tags": [
+        "experience",
+        "mediation",
+        "technology"
+      ],
+      "era": "contemporary",
+      "size": 15,
+      "summary": "Systems that organize, tune, and modulate the conditions of experience — encompassing digital platforms, narrative structures, chemical and psychedelic substances, spatial and architectural environments, ritual and ceremonial forms, somatic and bodily techniques, musical and sonic practices, and algorithmic attention systems. The broad category of what Open Machine studies and designs.",
+      "why_it_matters": "Technologies of experience is Open Machine's central category: the full spectrum of practices and systems — from ayahuasca to algorithms, from architecture to narrative — understood as technologies that shape how reality is encountered. Naming this category explicitly refuses the reduction of 'technology' to digital instruments alone.",
+      "x_hint": 180,
+      "y_hint": -360
+    },
+    {
+      "id": "experiential_mediation",
+      "label": "Experiential Mediation",
+      "type": "concept",
+      "cluster": "media",
+      "tags": [
+        "experience",
+        "perception",
+        "mediation"
+      ],
+      "era": "contemporary",
+      "size": 14,
+      "summary": "How systems constitute the conditions of feeling, perception, and action — the immanent production of experience through mediation. Every medium, ritual, chemical substance, spatial environment, or interface is a technology of experiential mediation: it shapes what can be felt, perceived, and done from within.",
+      "why_it_matters": "Mediation is active constitution. Mediation technologies shape the field of possible experience rather than merely conveying pre-given content — and this applies equally to narrative, music, psychedelics, architecture, social media, and ceremony.",
+      "x_hint": 160,
+      "y_hint": -100
+    },
+    {
+      "id": "perceptual_modulation",
+      "label": "Perceptual Modulation",
+      "type": "concept",
+      "cluster": "media",
+      "tags": [
+        "perception",
+        "tuning",
+        "experience"
+      ],
+      "era": "contemporary",
+      "size": 13,
+      "summary": "The technical capacity to tune, open, entrain, or transform experience through designed perceptual conditions — using architecture, rhythm, chemistry, narrative structure, light, spatial organization, or code as technologies of perception. All designed environments are perceptual modulation technologies.",
+      "why_it_matters": "Every designed environment modulates perception: it shapes what can be noticed, felt, and thought within it. Understanding perceptual modulation is prerequisite to responsible design across digital media, therapeutic and psychedelic contexts, architectural spaces, ritual environments, and immersive experience.",
+      "x_hint": 290,
+      "y_hint": -90
+    },
+    {
+      "id": "haraway",
+      "label": "Donna Haraway",
+      "type": "thinker",
+      "cluster": "posthuman",
+      "tags": [
+        "posthuman",
+        "companion species",
+        "situated knowledge"
+      ],
+      "era": "contemporary",
+      "size": 20,
+      "birth_year": 1944,
+      "summary": "Feminist science studies scholar who developed theories of cyborg hybridity, situated knowledge, and companion species — showing that biology, technology, sexuality, and culture are constitutively entangled. The cyborg is a political-corporeal technology: a being made simultaneously of flesh, code, desire, and politics.",
+      "why_it_matters": "Haraway's cyborg is the figure of immanent technology in its most visceral form. Her work grounds Open Machine's understanding of how bodies, technologies, and political formations interpenetrate — and why the feminist, queer, and colonial politics of the body are inseparable from any rigorous analysis of technology.",
+      "works": [
+        "A Cyborg Manifesto (1985)",
+        "Staying with the Trouble (2016)"
+      ],
+      "x_hint": 320,
+      "y_hint": 110,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Donna_Haraway_2006_%28cropped%29.jpg",
+      "key_year": 1985
+    },
+    {
+      "id": "latour",
+      "label": "Bruno Latour",
+      "type": "thinker",
+      "cluster": "posthuman",
+      "tags": [
+        "actor-network",
+        "more-than-human",
+        "politics"
+      ],
+      "era": "contemporary",
+      "size": 19,
+      "birth_year": 1947,
+      "death_year": 2022,
+      "summary": "Sociologist and philosopher who developed actor-network theory — showing that agency is distributed across human and nonhuman actors, and that every technological system is a sociotechnical network, a collective achievement of humans and nonhumans assembled through ongoing work.",
+      "why_it_matters": "Latour dissolves the distinction between the natural and the technical: every technology is a network of humans and nonhumans, every fact the product of collective work. This grounds a fully relational, immanent understanding of how technologies — from organisms to algorithms to institutions — assemble themselves and their worlds.",
+      "works": [
+        "We Have Never Been Modern (1991)",
+        "Reassembling the Social (2005)"
+      ],
+      "x_hint": 410,
+      "y_hint": 160,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Bruno_Latour_in_Taiwan_P1250394_%28cropped%29.jpg",
+      "key_year": 1987
+    },
+    {
+      "id": "tsing",
+      "label": "Anna Tsing",
+      "type": "thinker",
+      "cluster": "posthuman",
+      "tags": [
+        "ecology",
+        "assemblage",
+        "contamination"
+      ],
+      "era": "contemporary",
+      "size": 17,
+      "summary": "Anthropologist who explores multispecies entanglement, feral ecologies, and collaborative survival in disturbed landscapes — showing that life is always a practice of improvisation within conditions not of one's making. Her Matsutake Mushroom project maps an ecology of supply chains, forests, and human livelihoods as a single entangled technology.",
+      "why_it_matters": "Tsing reveals that living within damaged landscapes is itself a technology: the art of noticing, adapting, and finding patches of life within conditions of precarity. This is an immanent ecological technology that has direct resonance with Open Machine's interest in feral design and adaptive governance.",
+      "works": [
+        "The Mushroom at the End of the World (2015)",
+        "Arts of Living on a Damaged Planet (2017)"
+      ],
+      "x_hint": 390,
+      "y_hint": 290,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Anna_Tsing_Aarhus_Universitet.jpg",
+      "key_year": 2015
+    },
+    {
+      "id": "stengers",
+      "label": "Isabelle Stengers",
+      "type": "thinker",
+      "cluster": "posthuman",
+      "tags": [
+        "ecology",
+        "cosmopolitics",
+        "pluralism"
+      ],
+      "era": "contemporary",
+      "size": 17,
+      "summary": "Philosopher of science who developed cosmopolitics — an attention to the plurality of modes of existence and the demands that different practitioners and entities make on thought. Her work on Whitehead, chemistry, and the slow art of attending develops a technology of careful, non-reductive engagement with what matters.",
+      "why_it_matters": "Stengers' cosmopolitics is a technology of slowing thought: refusing the shortcuts of established disciplinary frameworks to attend carefully to what each situation, entity, and practitioner demands. This is a political technology of radical attentiveness — directly applicable to transdisciplinary and multispecies design.",
+      "works": [
+        "Cosmopolitics (1997-2003)",
+        "Thinking with Whitehead (2002)"
+      ],
+      "x_hint": 250,
+      "y_hint": 220,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Isabelle-stengers.jpg",
+      "key_year": 1997
+    },
+    {
+      "id": "barad",
+      "label": "Karen Barad",
+      "type": "thinker",
+      "cluster": "posthuman",
+      "tags": [
+        "posthuman",
+        "ontology",
+        "relation"
+      ],
+      "era": "contemporary",
+      "size": 16,
+      "summary": "Feminist physicist who developed agential realism — the view that matter and meaning are inextricably entangled through intra-action. Measurement apparatuses are active participants in world-making: every technological apparatus cuts the world into phenomena through its specific material engagement.",
+      "why_it_matters": "Barad grounds a materially rigorous account of how technologies — from particle accelerators to social media platforms to ritual forms — actively constitute the phenomena they appear to merely observe. Technology is world-making; intra-action replaces interaction, entanglement replaces separation.",
+      "works": [
+        "Meeting the Universe Halfway (2007)"
+      ],
+      "x_hint": 430,
+      "y_hint": 290,
+      "key_year": 2007
+    },
+    {
+      "id": "kohn",
+      "label": "Eduardo Kohn",
+      "type": "thinker",
+      "cluster": "posthuman",
+      "tags": [
+        "nonhuman",
+        "anthropology",
+        "semiosis"
+      ],
+      "era": "contemporary",
+      "size": 15,
+      "summary": "Anthropologist who studies how forests and nonhuman beings think — developing a semiotics beyond the human in which all living organisms engage in sign processes. The forest is a distributed cognitive technology built over billions of years of co-evolution.",
+      "why_it_matters": "Kohn's thinking forests demonstrate that semiosis — the process of making and responding to signs — is a property of all living systems, a cognitive technology evolved across billions of years. Human cognitive technologies participate in a vastly larger nonhuman semiotic field.",
+      "works": [
+        "How Forests Think (2013)"
+      ],
+      "x_hint": 310,
+      "y_hint": 370,
+      "key_year": 2013
+    },
+    {
+      "id": "uexkull",
+      "label": "Jakob von Uexküll",
+      "type": "thinker",
+      "cluster": "posthuman",
+      "tags": [
+        "environment",
+        "perception",
+        "animal worlds"
+      ],
+      "era": "early-20c",
+      "size": 16,
+      "birth_year": 1864,
+      "death_year": 1944,
+      "summary": "Biologist who developed the concept of Umwelt — each organism inhabits a specific, species-determined perceptual world. Every organism runs its own interface with physical reality: a particular set of sign-vehicles that matter to it and constitute its experiential world, ignoring everything else.",
+      "why_it_matters": "Umwelt reveals that perception is always already a designed technology — each organism has evolved a specific interface with reality that filters and amplifies particular signals. This grounds a radical pluralism of experience: there are as many different experiential worlds as there are species of living beings.",
+      "works": [
+        "A Foray into the Worlds of Animals and Humans (1934)"
+      ],
+      "x_hint": 200,
+      "y_hint": 310,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Uex_photo_full.jpg",
+      "key_year": 1934
+    },
+    {
+      "id": "more_than_human",
+      "label": "More-than-Human Agency",
+      "type": "concept",
+      "cluster": "posthuman",
+      "tags": [
+        "agency",
+        "nonhuman",
+        "politics"
+      ],
+      "era": "contemporary",
+      "size": 14,
+      "summary": "The distribution of agency across human and nonhuman actors — recognizing that animals, plants, microbes, algorithms, climate systems, and materials are active participants in shaping worlds. Technologies are never purely human: they always enroll nonhuman participants whose agency reshapes outcomes.",
+      "why_it_matters": "Technological design that ignores nonhuman agency produces systems that are brittle, extractive, and ultimately self-undermining. More-than-human design includes the full field of participants — their capacities, needs, and forms of resistance — as part of the design problem itself.",
+      "x_hint": 460,
+      "y_hint": 70
+    },
+    {
+      "id": "umwelt",
+      "label": "Umwelt",
+      "type": "concept",
+      "cluster": "posthuman",
+      "tags": [
+        "perception",
+        "environment",
+        "animal worlds"
+      ],
+      "era": "early-20c",
+      "size": 13,
+      "summary": "Each organism's species-specific perceptual world — the particular subset of environmental signals that constitute its experiential reality. Every organism is running a different interface with the same physical world: a frog lives in a world of moving objects; a tick lives in a world of warmth and butyric acid.",
+      "why_it_matters": "Umwelt grounds an ecological approach to experience design: every designed environment is simultaneously multiple experiential worlds — each species, each person, each cognitive architecture encounters a different reality within the same physical space. Designing for one Umwelt typically reshapes all others.",
+      "x_hint": 220,
+      "y_hint": 440
+    },
+    {
+      "id": "feral_ecologies",
+      "label": "Feral Ecologies",
+      "type": "concept",
+      "cluster": "posthuman",
+      "tags": [
+        "ecology",
+        "assemblage",
+        "adaptation"
+      ],
+      "era": "contemporary",
+      "size": 13,
+      "summary": "Unstable, mixed terrains where living systems, technical infrastructure, and adaptive processes interact in unplanned, generative ways — producing emergent dynamics that exceed any designed intent. Feral ecologies are what all sufficiently complex technologies eventually become.",
+      "why_it_matters": "Feral ecologies reveal the long-term behavior of immanent technologies: they escape their designers' intentions and develop their own dynamics through the interactions of organisms, infrastructures, and environments. Understanding ferality is essential to any honest account of what technologies actually do over time.",
+      "x_hint": 400,
+      "y_hint": 400
+    },
+    {
+      "id": "ostrom",
+      "label": "Elinor Ostrom",
+      "type": "thinker",
+      "cluster": "governance",
+      "tags": [
+        "governance",
+        "commons",
+        "institutions"
+      ],
+      "era": "late-20c",
+      "size": 18,
+      "birth_year": 1933,
+      "death_year": 2012,
+      "summary": "Political economist who demonstrated that communities can self-govern shared resources through polycentric institutions — without central authority or market mechanisms. Her design principles for common-pool resource governance are a practical grammar for immanent collective self-organization.",
+      "why_it_matters": "Ostrom's commons are a technology of immanent collective governance: no transcendent authority, no invisible hand, but rather the emergent protocols of communities managing shared resources in relation. Her work is the most empirically grounded demonstration that governance can work from within — and provides concrete design principles for doing so.",
+      "works": [
+        "Governing the Commons (1990)"
+      ],
+      "x_hint": -100,
+      "y_hint": 290,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Nobel_Prize_2009-Press_Conference_KVA-30.jpg",
+      "key_year": 1990
+    },
+    {
+      "id": "bauwens",
+      "label": "Michel Bauwens",
+      "type": "thinker",
+      "cluster": "governance",
+      "tags": [
+        "commons",
+        "p2p",
+        "cooperative production"
+      ],
+      "era": "contemporary",
+      "size": 15,
+      "summary": "Theorist of peer-to-peer production and the commons who explores how distributed cooperation can form the basis of new economic and social technologies — treating governance, production, and knowledge as commons infrastructure, shared and governed by participants.",
+      "why_it_matters": "Peer-to-peer production is the contemporary form of immanent governance technology: coordination without centralized command, emerging from the distributed activity of participants. Bauwens maps how this logic can be extended from open-source software to urban governance, finance, and care.",
+      "x_hint": 60,
+      "y_hint": 330,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Michel_Bauwens%2C_2013_%28cropped%29.JPG",
+      "key_year": 2005
+    },
+    {
+      "id": "de_filippi",
+      "label": "Primavera De Filippi",
+      "type": "thinker",
+      "cluster": "governance",
+      "tags": [
+        "blockchain",
+        "governance",
+        "institutions"
+      ],
+      "era": "contemporary",
+      "size": 15,
+      "summary": "Legal scholar exploring how blockchain and smart contracts create new forms of distributed governance — code as constitutional technology that encodes social relations, coordination protocols, and power arrangements in executable form. Lex cryptographia as immanent institutional design.",
+      "why_it_matters": "De Filippi's work reveals that code is constitution: digital technology is a governance technology that encodes social contracts in executable form. This is the most explicit contemporary case of Deleuzian protocol thinking — and raises fundamental questions about who designs the conditions within which collective life is organized.",
+      "x_hint": 160,
+      "y_hint": 290,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Primavera_De_Filippi_%2824609407239%29.jpg",
+      "key_year": 2018
+    },
+    {
+      "id": "metagovernance",
+      "label": "Metagovernance",
+      "type": "concept",
+      "cluster": "governance",
+      "tags": [
+        "governance",
+        "reflexive",
+        "coordination"
+      ],
+      "era": "contemporary",
+      "size": 14,
+      "summary": "Governance of governance — the reflexive design of the conditions and frameworks within which governance systems operate. Metagovernance treats institutional design as an ongoing technical practice: the meta-level technology that shapes what coordination technologies are possible.",
+      "why_it_matters": "Metagovernance is the recognition that every governance system is itself governed by conditions of possibility — and that designing those conditions is a political technology of the first order. Open Machine's interest in protocol commons and open institutional design is an exercise in metagovernance.",
+      "x_hint": 0,
+      "y_hint": 410
+    },
+    {
+      "id": "open_protocols",
+      "label": "Open Protocols",
+      "type": "concept",
+      "cluster": "governance",
+      "tags": [
+        "protocol",
+        "interoperability",
+        "commons"
+      ],
+      "era": "contemporary",
+      "size": 14,
+      "summary": "Shared, open, extensible technical and social protocols that enable interoperability and collective action — treating coordination infrastructure as a commons, open and extensible by the communities that use it. Protocols are the invisible governance technologies of networked life.",
+      "why_it_matters": "Open protocols are immanent coordination technologies: they organize collective action without central command by creating shared interfaces within which diverse actors can self-organize. Every open standard, every shared ritual form, every common narrative convention functions as a protocol.",
+      "x_hint": -150,
+      "y_hint": 390
+    },
+    {
+      "id": "extitutional",
+      "label": "Extitutional Thought",
+      "type": "concept",
+      "cluster": "governance",
+      "tags": [
+        "governance",
+        "adaptive",
+        "informal"
+      ],
+      "era": "contemporary",
+      "size": 13,
+      "summary": "Modes of organization that are loose, adaptive, and trans-institutional — operating in the margins, gaps, and intersections of formal institutional structures. Extitutional forms are the immanent organizational technologies of those who cannot or will not work through established channels.",
+      "why_it_matters": "Extitutional practices reveal that formal institutions are not the only technologies of collective organization. Communities, underground networks, informal economies, and fugitive assemblies develop their own coordination technologies that often prove more adaptive and generative than their formal counterparts.",
+      "x_hint": 110,
+      "y_hint": 410
+    },
+    {
+      "id": "protocol_underground",
+      "label": "Protocol Underground",
+      "type": "concept",
+      "cluster": "governance",
+      "tags": [
+        "protocol",
+        "informal",
+        "coordination"
+      ],
+      "era": "contemporary",
+      "size": 12,
+      "summary": "Semi-visible, informal experimental coordination worlds developing new protocols, practices, and social technologies through direct experimentation, outside institutional authorization or sanction.",
+      "why_it_matters": "The protocol underground is where new coordination technologies are actually invented: in the marginal, experimental, and clandestine spaces where people develop new practices for living and organizing together. It is the immanent laboratory of social technology.",
+      "x_hint": -50,
+      "y_hint": 460
+    },
+    {
+      "id": "collective_intelligence",
+      "label": "Collective Intelligence",
+      "type": "concept",
+      "cluster": "governance",
+      "tags": [
+        "cognition",
+        "governance",
+        "coordination"
+      ],
+      "era": "contemporary",
+      "size": 14,
+      "summary": "The emergent cognitive capacity of groups — shaped by tools, norms, interfaces, narrative environments, and mediation systems. Collective intelligence is an emergent property of how individual intelligences are technologically organized and related, not reducible to any of its parts.",
+      "why_it_matters": "Collective intelligence is always technologically mediated: it emerges from specific tools, protocols, and social arrangements that enable or constrain distributed sense-making. Designing for collective intelligence means designing the technologies of relation through which it becomes possible.",
+      "x_hint": 10,
+      "y_hint": 330
+    },
+    {
+      "id": "artaud",
+      "label": "Antonin Artaud",
+      "type": "thinker",
+      "cluster": "art",
+      "tags": [
+        "ritual",
+        "intensity",
+        "experience"
+      ],
+      "era": "early-20c",
+      "size": 16,
+      "birth_year": 1896,
+      "death_year": 1948,
+      "summary": "Theater director and theorist who conceived the Theater of Cruelty as an immanent technology of transformation — designed to bypass representation entirely and produce direct physical and psychic experience in performers and audience alike. Theater as virus, as ceremonial, as total sensory technology.",
+      "why_it_matters": "Artaud develops theater as a rigorous technology of experience, aiming for direct somatic and psychic impact. His vision is the ancestor of every immersive technology — from ritual and ceremony to psychedelic experience to VR — oriented toward transformation over entertainment.",
+      "works": [
+        "The Theater and Its Double (1938)"
+      ],
+      "x_hint": -490,
+      "y_hint": 130,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Antonin_Artaud_1926.jpg",
+      "key_year": 1938
+    },
+    {
+      "id": "sun_ra",
+      "label": "Sun Ra",
+      "type": "thinker",
+      "cluster": "art",
+      "tags": [
+        "myth",
+        "cosmology",
+        "Afrofuturism",
+        "art",
+        "Black radical tradition"
+      ],
+      "era": "mid-20c",
+      "size": 16,
+      "birth_year": 1914,
+      "death_year": 1993,
+      "summary": "Musician, poet, and philosopher who built an entire immanent cosmos through music, costume, performance, and Afrofuturist world-building. Sun Ra treated music as a technology of cosmic consciousness — a practice of reality construction, insisting that Black liberation required building entirely new cosmologies from within the present.",
+      "why_it_matters": "Sun Ra is the most radical demonstration that music is a reality-technology — a practice of world-construction, not aesthetic expression. His Arkestra was a laboratory of immanent cosmological engineering that synthesized sonic, visual, narrative, and spiritual technologies into a single transformative apparatus.",
+      "x_hint": 490,
+      "y_hint": 390,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/59/Sun_Ra_%281973_publicity_photo_-_Impulse_ABC_Dunhill%29.jpg",
+      "works": [
+        "Space Is the Place (1974)",
+        "The Heliocentric Worlds of Sun Ra (1965)",
+        "Astro Black (1972)"
+      ],
+      "key_year": 1965
+    },
+    {
+      "id": "situationists",
+      "label": "Situationists",
+      "type": "tradition",
+      "cluster": "art",
+      "tags": [
+        "media",
+        "dérive",
+        "spectacle",
+        "intervention"
+      ],
+      "era": "mid-20c",
+      "size": 15,
+      "summary": "Avant-garde movement that developed dérive (drift through urban space) and détournement (diversion of existing cultural materials) as tactical technologies for disrupting the society of the spectacle — reclaiming the construction of everyday life from capitalist reification through direct experiential intervention.",
+      "why_it_matters": "Situationist tactics are explicit technologies of experience: dérive as a psychogeographic technology for remapping the city through felt movement; détournement as a semiotic technology for redirecting the affects embedded in existing cultural forms. They demonstrate that spatial and narrative environments can be re-engineered from within, without permission.",
+      "works": [
+        "Society of the Spectacle (Debord, 1967)"
+      ],
+      "x_hint": -510,
+      "y_hint": -20
+    },
+    {
+      "id": "afrofuturism",
+      "label": "Afrofuturism",
+      "type": "tradition",
+      "cluster": "art",
+      "tags": [
+        "art",
+        "technology",
+        "myth",
+        "liberation"
+      ],
+      "era": "late-20c",
+      "size": 15,
+      "summary": "Cultural and artistic tradition — from Sun Ra and Octavia Butler to contemporary practitioners — that uses speculative fiction, music, visual art, and performance to construct alternate technological imaginaries from African diasporic perspectives. Afrofuturism treats the future as a technology that can be built now, from within traditions that have survived by imagining otherwise.",
+      "why_it_matters": "Afrofuturism demonstrates that technological imagination is never neutral — that the dominant technological imaginary encodes specific racial and colonial assumptions — and that speculative world-building is itself a technology of liberation. It insists that those most excluded from official technological futures have always been building alternatives.",
+      "x_hint": 500,
+      "y_hint": 210
+    },
+    {
+      "id": "ritual_technologies",
+      "label": "Ritual Technologies",
+      "type": "concept",
+      "cluster": "art",
+      "tags": [
+        "ritual",
+        "attention",
+        "transformation"
+      ],
+      "era": "contemporary",
+      "size": 14,
+      "summary": "Systems that coordinate attention, affect, and collective transformation through designed ritual form — music, dance, ceremony, initiation, communal gathering, and entheogenic practice as explicit technologies for altering states, forging collective bonds, and producing shared meaning. Humanity's oldest and most extensively tested experience technologies.",
+      "why_it_matters": "Ritual technologies predate digital media by millennia and have been refined across thousands of cultures and traditions. They are direct ancestors of every contemporary immersive and experience design practice — and their structural logic (liminal space, structured attention, collective affect) maps directly onto Open Machine's approach to experience technology.",
+      "x_hint": -400,
+      "y_hint": 390
+    },
+    {
+      "id": "altered_states",
+      "label": "Altered States as Interface",
+      "type": "concept",
+      "cluster": "art",
+      "tags": [
+        "perception",
+        "consciousness",
+        "technology"
+      ],
+      "era": "contemporary",
+      "size": 13,
+      "summary": "The use of chemical, entheogenic, somatic, trance, rhythmic, and sensory techniques as technologies for transforming perception, dissolving habitual patterns, and accessing non-ordinary states of experience. Psychedelics, breathwork, intense movement, sensory deprivation, fasting, and rhythmic ceremony as the most direct available technologies of experiential transformation.",
+      "why_it_matters": "Altered state technologies are among the most potent and least institutionally understood forms of experiential technology — capable of profound therapeutic, creative, relational, and spiritual transformation. They represent a core dimension of what Open Machine means by 'technology': any system that shapes how reality is encountered, without restriction to the digital.",
+      "x_hint": -180,
+      "y_hint": 490
+    },
+    {
+      "id": "cinema_machine",
+      "label": "Cinema as Experiential Machine",
+      "type": "concept",
+      "cluster": "art",
+      "tags": [
+        "cinema",
+        "experience",
+        "mediation"
+      ],
+      "era": "contemporary",
+      "size": 14,
+      "summary": "Film as an immanent technology of perception — a machine for reorganizing how reality is seen, mediated, experienced, and constructed. Cinema is simultaneously a technical apparatus and a cultural technology that reshapes collective experience of time, space, narrative, and embodied affect.",
+      "why_it_matters": "Cinema is the paradigmatic case of a reality-mediation technology: it takes raw temporal experience and reorganizes it into structured experiential worlds, constructing reality through the organization of perception. Understanding the cinema machine illuminates how all mediation technologies — from narrative to algorithm — constitute experiential reality.",
+      "x_hint": 200,
+      "y_hint": 500
+    },
+    {
+      "id": "openness_vs_control",
+      "label": "Openness vs Control",
+      "type": "downstream",
+      "cluster": "downstream",
+      "tags": [
+        "governance",
+        "openness",
+        "power"
+      ],
+      "era": "contemporary",
+      "size": 12,
+      "summary": "The fundamental tension between open, generative, immanent systems and closed, controlling, transcendent ones. This tension runs through every dimension of technology: open protocols vs. proprietary platforms, therapeutic vs. capture-oriented psychedelics, liberatory vs. disciplinary ritual, commons vs. enclosure.",
+      "why_it_matters": "Openness vs. control is the political tension at the heart of every immanent technology — whether digital, narrative, chemical, bodily, or cultural. The same underlying technology can serve openness or capture depending on who designs it, who controls it, and what power relations it is embedded in.",
+      "x_hint": 80,
+      "y_hint": -80
+    },
+    {
+      "id": "distributed_subjectivity",
+      "label": "Distributed Subjectivity",
+      "type": "downstream",
+      "cluster": "downstream",
+      "tags": [
+        "cognition",
+        "posthuman",
+        "identity"
+      ],
+      "era": "contemporary",
+      "size": 12,
+      "summary": "Subjectivity distributed across multiple bodies, technologies, relationships, and environments — a distributed phenomenon with no unified interior seat. The subject is a technology of coordination, produced through the specific assemblages of media, practices, narratives, and relations that constitute it.",
+      "why_it_matters": "Distributed subjectivity is the experiential correlate of distributed cognition: the self is produced through specific technological and relational configurations. Every technology that shapes social and experiential life is also a technology of subjectivity — producing specific kinds of subjects.",
+      "x_hint": -90,
+      "y_hint": -70
+    },
+    {
+      "id": "experience_design_politics",
+      "label": "Experience Design as Politics",
+      "type": "downstream",
+      "cluster": "downstream",
+      "tags": [
+        "experience",
+        "design",
+        "politics"
+      ],
+      "era": "contemporary",
+      "size": 12,
+      "summary": "The political dimensions of designing experiential conditions — who shapes experience shapes power. Experience design is the engineering of consciousness, affect, and possibility. Every technology of experience is also a technology of governance: it determines who can feel what, within what frame.",
+      "why_it_matters": "Experience design is political design: the design of experiential conditions determines what forms of consciousness, relation, and action are possible within them. Open Machine's commitment is to experience design oriented toward expansion — opening the field of immanent possibility.",
+      "x_hint": 0,
+      "y_hint": -130
+    },
+    {
+      "id": "human_nonhuman_coagency",
+      "label": "Human/Nonhuman Co-Agency",
+      "type": "downstream",
+      "cluster": "downstream",
+      "tags": [
+        "posthuman",
+        "agency",
+        "design"
+      ],
+      "era": "contemporary",
+      "size": 12,
+      "summary": "Design and governance frameworks that include nonhuman actors — algorithmic systems, biological organisms, climatic processes, material assemblages — as genuine co-participants in technological and ecological systems. Technology always enrolls nonhuman agencies whose capacities reshape outcomes.",
+      "why_it_matters": "Technologies designed around human agency alone produce brittle, extractive, and ultimately self-undermining systems. Human-nonhuman coagency requires that the full field of participants — biological, computational, climatic, material — be included as co-designers, bringing their own capacities and resistances.",
+      "x_hint": 130,
+      "y_hint": 30
+    },
+    {
+      "id": "perception_infrastructure",
+      "label": "Perception as Infrastructure",
+      "type": "downstream",
+      "cluster": "downstream",
+      "tags": [
+        "perception",
+        "infrastructure",
+        "mediation"
+      ],
+      "era": "contemporary",
+      "size": 12,
+      "summary": "Treating perceptual conditions — the architectures, media systems, algorithms, chemical environments, spatial arrangements, and social norms that shape what can be perceived and felt — as infrastructure requiring design, care, and political attention. Perception is produced, not given, and its production is a political technology.",
+      "why_it_matters": "Perception infrastructure is simultaneously technological and political: whoever designs the conditions of perception designs the conditions of consciousness and action. Open Machine treats this as a key site of political intervention — the technology that underlies all other political technologies.",
+      "x_hint": 0,
+      "y_hint": 130
+    },
+    {
+      "id": "media_ritual_mediation",
+      "label": "Media-Ritual-Chemical-Social Mediation",
+      "type": "downstream",
+      "cluster": "downstream",
+      "tags": [
+        "mediation",
+        "media",
+        "ritual"
+      ],
+      "era": "contemporary",
+      "size": 12,
+      "summary": "A single analytical frame for the full spectrum of mediation technologies — digital platforms, narrative structures, cinema, architectural environments, ritual and ceremonial forms, chemical substances, somatic practices, musical and sonic technologies. All of these mediate experience: they constitute the conditions within which reality is encountered.",
+      "why_it_matters": "Expanding the category of mediation beyond digital technology is one of Open Machine's core intellectual moves. Treating all experience-shaping technologies within a single analytical frame makes visible the structural commonalities between algorithms, rituals, psychedelics, and narratives — and allows insights from one domain to cross-pollinate others.",
+      "x_hint": -130,
+      "y_hint": 60
+    },
+    {
+      "id": "collective_sense_making",
+      "label": "Collective Sense-Making",
+      "type": "downstream",
+      "cluster": "downstream",
+      "tags": [
+        "cognition",
+        "collective",
+        "sense-making"
+      ],
+      "era": "contemporary",
+      "size": 12,
+      "summary": "The distributed social processes through which groups construct shared orientation, meaning, and response — including the role of media, ritual, protocol, narrative, and institutional form in enabling or constraining what can be collectively known and responded to. Collective sense-making is always mediated by the technologies that organize collective attention.",
+      "why_it_matters": "Collective sense-making is the cognitive dimension of collective governance: how groups come to share enough orientation to coordinate action. Every information technology, every ritual form, every narrative convention, every protocol is a technology of collective sense-making — and their design determines what forms of collective intelligence are possible.",
+      "x_hint": -100,
+      "y_hint": 90
+    },
+    {
+      "id": "experimental_governance",
+      "label": "Experimental Governance",
+      "type": "downstream",
+      "cluster": "downstream",
+      "tags": [
+        "governance",
+        "experiment",
+        "protocol"
+      ],
+      "era": "contemporary",
+      "size": 12,
+      "summary": "Governance understood as an immanent practice of adaptive coordination — explicitly provisional, revisable, and oriented toward learning over fixed solutions. Governance that treats its own design as an open experiment, always operating in conditions of incomplete knowledge.",
+      "why_it_matters": "Experimental governance is the direct political application of immanent philosophy: no transcendent solution, no final answer, only ongoing revision in relation to what is actually happening. This is the form of governance that matches the complexity and openness of immanent technological systems.",
+      "x_hint": 60,
+      "y_hint": 110
+    },
+    {
+      "id": "reality_interfaces",
+      "label": "Reality Interfaces",
+      "type": "downstream",
+      "cluster": "downstream",
+      "tags": [
+        "mediation",
+        "interface",
+        "reality"
+      ],
+      "era": "contemporary",
+      "size": 12,
+      "summary": "The designed surfaces through which reality is accessed, filtered, and constructed — from screens and platforms to psychedelic substances to ritual spaces to financial instruments to narrative conventions. Every technology is a reality interface: it constitutes a specific mode of encountering the real.",
+      "why_it_matters": "Reality interfaces is one of Open Machine's central concepts: the recognition that reality is never encountered raw but always through specific designed (or evolved) interfaces that select, amplify, and constitute what appears. Designing reality interfaces is designing consciousness — which makes it the most politically significant form of technological design.",
+      "x_hint": 110,
+      "y_hint": -50
+    },
+    {
+      "id": "technologies_freedom_capture",
+      "label": "Technologies of Freedom / Capture",
+      "type": "downstream",
+      "cluster": "downstream",
+      "tags": [
+        "technology",
+        "freedom",
+        "power"
+      ],
+      "era": "contemporary",
+      "size": 12,
+      "summary": "The dual capacity of experience technologies to liberate or capture — to expand or constrain human and nonhuman potential. The same technology — psychedelic, narrative, ritual, computational, sexual — can be a technology of openness or a technology of enclosure depending on its design, deployment, and the power relations that govern it.",
+      "why_it_matters": "No technology is inherently liberatory or oppressive: the same underlying capacity for experiential transformation can serve either expansion or capture. Open Machine's political commitment is to designing experience technologies toward freedom — while developing the analytical tools to recognize when they are operating in the direction of capture.",
+      "x_hint": -80,
+      "y_hint": -110
+    },
+    {
+      "id": "piketty",
+      "label": "Thomas Piketty",
+      "type": "thinker",
+      "cluster": "governance",
+      "tags": [
+        "inequality",
+        "capital",
+        "political economy",
+        "distribution"
+      ],
+      "era": "contemporary",
+      "size": 17,
+      "birth_year": 1971,
+      "summary": "Economist who documented the structural dynamics of wealth inequality across capitalism — demonstrating that capital accumulation systematically outpaces economic growth and concentrates power through the mathematical logic of capital as a technology of appropriation.",
+      "why_it_matters": "Piketty reveals that capital is a political technology: it encodes specific power relations in mathematical form and reproduces them automatically. Money systems are governance technologies — they determine who can act, what can be built, and whose immanent productive capacities are captured for whom.",
+      "works": [
+        "Capital in the Twenty-First Century (2013)",
+        "Capital and Ideology (2019)"
+      ],
+      "x_hint": -230,
+      "y_hint": 320,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Thomas_Piketty%2C_2015_%28cropped%29.jpg",
+      "key_year": 2013
+    },
+    {
+      "id": "drumm",
+      "label": "Colin Drumm",
+      "type": "thinker",
+      "cluster": "governance",
+      "tags": [
+        "money",
+        "credit",
+        "political economy",
+        "monetary theory"
+      ],
+      "era": "contemporary",
+      "size": 15,
+      "summary": "Political economist and theorist of money as social and political technology — exploring how monetary systems encode power relations, constitute collective economic life, and function as sovereignty instruments. Money is a technology that actively produces economic relations, shaping what can be done and by whom.",
+      "why_it_matters": "Drumm illuminates money as a designed technology of collective coordination and power: an apparatus that shapes agency, obligation, and possibility at every scale. Understanding monetary systems as technologies — designed, contestable, and capable of redesign — is prerequisite to any serious engagement with economic governance.",
+      "x_hint": -280,
+      "y_hint": 255,
+      "key_year": 2020
+    },
+    {
+      "id": "buterin",
+      "label": "Vitalik Buterin",
+      "type": "thinker",
+      "cluster": "governance",
+      "tags": [
+        "blockchain",
+        "cryptoeconomics",
+        "protocol",
+        "mechanism design"
+      ],
+      "era": "contemporary",
+      "size": 16,
+      "birth_year": 1994,
+      "summary": "Creator of Ethereum and theorist of cryptoeconomics, mechanism design, and decentralized governance — exploring how protocol-level rules can encode social coordination as executable code. Cryptographic consensus as an immanent technology of trust that operates without central authority.",
+      "why_it_matters": "Buterin pushes the logic of protocol thinking into programmable trust and collective coordination — treating governance itself as an object of technical design. Ethereum is the most ambitious attempt to date to build immanent social coordination technology: trust without transcendent authority, contract without sovereign enforcement.",
+      "works": [
+        "Ethereum Whitepaper (2013)",
+        "Cryptoeconomics (ongoing research)"
+      ],
+      "x_hint": 220,
+      "y_hint": 350,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Vitalik_Buterin_TechCrunch_London_2015_%28cropped%29.jpg",
+      "key_year": 2013
+    },
+    {
+      "id": "buchman",
+      "label": "Ethan Buchman",
+      "type": "thinker",
+      "cluster": "governance",
+      "tags": [
+        "blockchain",
+        "distributed systems",
+        "money",
+        "cybernetics",
+        "protocol"
+      ],
+      "era": "contemporary",
+      "size": 15,
+      "summary": "Co-founder of Cosmos and theorist who explicitly connects Byzantine fault-tolerant distributed systems to cybernetics, money, sovereignty, and open protocol design. Cosmos/IBC as an attempt to build internet-of-blockchains through sovereign interoperability, enabling diversity without centralization.",
+      "why_it_matters": "Buchman is a rare bridge between cybernetic governance theory and blockchain infrastructure — treating distributed consensus as a continuation of Beer and Wiener: immanent, fault-tolerant, self-organizing coordination technology. His work makes the philosophical lineage of distributed systems explicit.",
+      "works": [
+        "Tendermint: Byzantine Fault Tolerance in the Age of Blockchains (2016)"
+      ],
+      "x_hint": 160,
+      "y_hint": 375,
+      "image": "https://avatars.githubusercontent.com/u/2300911?v=4",
+      "key_year": 2016
+    },
+    {
+      "id": "moten",
+      "label": "Fred Moten",
+      "type": "thinker",
+      "cluster": "art",
+      "tags": [
+        "Black radical tradition",
+        "undercommons",
+        "fugitivity",
+        "poetics",
+        "performance"
+      ],
+      "era": "contemporary",
+      "size": 18,
+      "birth_year": 1962,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Fred_Moten_2016.png",
+      "summary": "Scholar, poet, and theorist of Black radical aesthetics whose work on the undercommons, fugitivity, and the commons of blackness develops sonic, poetic, and social practices as immanent technologies of collective life — operating beneath and beyond institutional capture. Moten's study is a technology of the refusal to be governed.",
+      "why_it_matters": "The undercommons is an immanent technology of collective study and sociality that operates outside institutional frameworks: a form of social technology that refuses enclosure and produces collective intelligence without authorization. Directly relevant to Open Machine's interest in protocol underground, extitutional organization, and the practices that sustain life beneath institutional life.",
+      "works": [
+        "In the Break (2003)",
+        "The Undercommons (2013, with Stefano Harney)",
+        "Black and Blur (2017)",
+        "Stolen Life (2018)"
+      ],
+      "x_hint": -560,
+      "y_hint": 280,
+      "key_year": 2003
+    },
+    {
+      "id": "hartman",
+      "label": "Saidiya Hartman",
+      "type": "thinker",
+      "cluster": "art",
+      "tags": [
+        "Black feminist theory",
+        "critical fabulation",
+        "afterlives of slavery",
+        "archival practice"
+      ],
+      "era": "contemporary",
+      "size": 17,
+      "birth_year": 1961,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/97/Saidiya_Hartman_2020_%28cropped%29.jpg",
+      "summary": "Scholar and writer who developed critical fabulation — a speculative methodology for recovering lives lost in colonial archives, making visible the experiential worlds of those who left no record. Narrative, here, is a technology of historical recovery: speculation as rigorous method, imagination as a tool of justice.",
+      "why_it_matters": "Critical fabulation is a narrative technology that interfaces with historical reality where documentation fails — speculative reconstruction as a rigorous practice of experiential and historical mediation. One of the most developed accounts of narrative as an immanent technology of memory: reconstruction of what it was like to live.",
+      "works": [
+        "Scenes of Subjection (1997)",
+        "Lose Your Mother (2007)",
+        "Wayward Lives, Beautiful Experiments (2019)"
+      ],
+      "x_hint": -530,
+      "y_hint": 390,
+      "key_year": 1997
+    },
+    {
+      "id": "cgoes",
+      "label": "Christopher Goes",
+      "type": "thinker",
+      "cluster": "governance",
+      "tags": [
+        "blockchain",
+        "distributed systems",
+        "protocol",
+        "interoperability",
+        "IBC"
+      ],
+      "era": "contemporary",
+      "size": 15,
+      "image": "https://avatars.githubusercontent.com/u/24760279?v=4",
+      "summary": "Principal architect of the Inter-Blockchain Communication (IBC) protocol — the interoperability standard for the Cosmos network — and a theorist of pluralist, sovereign distributed systems design. IBC is the most realized large-scale implementation of open protocol thinking: autonomous chains communicating without surrendering sovereignty.",
+      "why_it_matters": "IBC is an immanent coordination technology at infrastructure scale: it enables autonomous systems to communicate and cooperate without centralized control or unified governance. Goes and Buchman together demonstrate what open protocol infrastructure looks like when built to the specification of immanent, sovereign, interoperating systems.",
+      "works": [
+        "IBC Protocol Specification (2019)",
+        "Pluranimity (pluranimity.org)"
+      ],
+      "x_hint": 260,
+      "y_hint": 430,
+      "key_year": 2019
+    },
+    {
+      "id": "hutchins",
+      "label": "Edwin Hutchins",
+      "type": "thinker",
+      "cluster": "cybernetics",
+      "tags": [
+        "distributed cognition",
+        "cognitive science",
+        "anthropology",
+        "systems"
+      ],
+      "era": "contemporary",
+      "size": 17,
+      "birth_year": 1948,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/ca/HutchinsFlightDeck.jpg",
+      "summary": "Cognitive anthropologist who developed distributed cognition theory through meticulous ethnographic study of ship navigation and aircraft cockpit operations — showing that cognitive systems are spread across people, tools, instruments, and environments. Mind is immanent to its technological and social context, not housed in any individual.",
+      "why_it_matters": "Hutchins provides the definitive empirical demonstration that intelligence is a property of the whole sociotechnical system, not the individual brain. This is the foundational argument for treating every tool, interface, protocol, and social arrangement as a cognitive technology — part of the extended mind of collective intelligence.",
+      "works": [
+        "Cognition in the Wild (1995)"
+      ],
+      "x_hint": -240,
+      "y_hint": -310,
+      "key_year": 1995
+    },
+    {
+      "id": "negri",
+      "label": "Antonio Negri",
+      "type": "thinker",
+      "cluster": "governance",
+      "tags": [
+        "multitude",
+        "commons",
+        "biopolitics",
+        "empire",
+        "immanence"
+      ],
+      "era": "contemporary",
+      "size": 18,
+      "birth_year": 1933,
+      "death_year": 2023,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Antonio_Negri_%28cropped%29.jpg",
+      "summary": "Political philosopher whose analysis of Empire, the multitude, and the commons theorizes immanent constituent power — the capacity of living labor and collective self-organization to produce social forms without external authorization. Rooted in a rigorous Spinozist reading of political ontology.",
+      "why_it_matters": "The multitude is an immanent political technology: distributed, plural, self-organizing against centralized command and transcendent sovereignty. Negri's framework directly maps onto Open Machine's interest in protocol commons, governance without sovereignty, and the living labor of collective intelligence that produces value without being captured by it.",
+      "works": [
+        "Empire (2000, with Hardt)",
+        "Multitude (2004, with Hardt)",
+        "Commonwealth (2009, with Hardt)",
+        "The Savage Anomaly (1981)"
+      ],
+      "x_hint": -90,
+      "y_hint": 370,
+      "key_year": 1981
+    },
+    {
+      "id": "spinoza",
+      "label": "Baruch Spinoza",
+      "type": "thinker",
+      "cluster": "process",
+      "tags": [
+        "immanence",
+        "conatus",
+        "affect",
+        "ontology",
+        "ethics"
+      ],
+      "era": "early-modern",
+      "size": 19,
+      "birth_year": 1632,
+      "death_year": 1677,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Spinoza.jpg",
+      "summary": "Philosopher of immanence who established that God and Nature are one substance — all things are modes of a single immanent field. His theory of conatus (each thing's drive to persist and intensify its being) and affect theory provide the first rigorous account of bodies as technologies of desire and power, capable of affecting and being affected without any transcendent guide.",
+      "why_it_matters": "Spinoza makes the body into the primary site of power and desire — a technology of affect. Every subsequent immanent technology in this lineage (feedback systems, affect modulation, biopolitics, psychedelics understood as molecular affect-transformers, somatic practices) descends from this move.",
+      "works": [
+        "Ethics (1677)",
+        "Theological-Political Treatise (1670)"
+      ],
+      "x_hint": -430,
+      "y_hint": 220,
+      "key_year": 1677
+    },
+    {
+      "id": "nietzsche",
+      "label": "Friedrich Nietzsche",
+      "type": "thinker",
+      "cluster": "process",
+      "tags": [
+        "becoming",
+        "will to power",
+        "genealogy",
+        "vitalism",
+        "perspectivism"
+      ],
+      "era": "early-modern",
+      "size": 18,
+      "birth_year": 1844,
+      "death_year": 1900,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Nietzsche187a.jpg",
+      "summary": "Philosopher of becoming who developed genealogy as a technology of immanent critique — tracing how values, bodies, and forms of life are produced through power-relations, without appeal to any external standard. His will to power is an immanent creative force operating through all life, culture, and technology, demanding affirmation.",
+      "why_it_matters": "Genealogy is a technology for revealing how seemingly natural conditions were produced through contingent historical processes. This method — extended by Foucault into the analysis of how technologies of power produce subjects — is the critical tool for any analysis of immanent technology.",
+      "works": [
+        "Thus Spoke Zarathustra (1883)",
+        "Beyond Good and Evil (1886)",
+        "On the Genealogy of Morality (1887)",
+        "The Will to Power (1901)"
+      ],
+      "x_hint": -370,
+      "y_hint": 50,
+      "key_year": 1887
+    },
+    {
+      "id": "bergson",
+      "label": "Henri Bergson",
+      "type": "thinker",
+      "cluster": "process",
+      "tags": [
+        "duration",
+        "vitalism",
+        "becoming",
+        "memory",
+        "intuition"
+      ],
+      "era": "early-20c",
+      "size": 17,
+      "birth_year": 1859,
+      "death_year": 1941,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Henri_Bergson_02.jpg",
+      "summary": "Philosopher of duration who argued that real time is qualitative, continuous creative flow — the very medium of life. His challenge to mechanical, spatial models of time grounds an understanding of biological, cultural, artistic, and experiential technologies as participations in living temporal becoming.",
+      "why_it_matters": "Bergson reveals that mechanical, quantitative time is an abstraction imposed on living duration — that life, creativity, and experience are irreducibly temporal. This is the foundation for Open Machine's interest in lived, processual temporality across all its forms: narrative, ritual, musical, computational.",
+      "works": [
+        "Time and Free Will (1889)",
+        "Matter and Memory (1896)",
+        "Creative Evolution (1907)"
+      ],
+      "x_hint": -460,
+      "y_hint": 140,
+      "key_year": 1907
+    },
+    {
+      "id": "philosophy_of_immanence",
+      "label": "Philosophy of Immanence",
+      "type": "tradition",
+      "cluster": "core",
+      "tags": [
+        "immanence",
+        "ontology",
+        "spinoza",
+        "deleuze",
+        "process",
+        "becoming",
+        "plane-of-immanence"
+      ],
+      "era": "contemporary",
+      "size": 23,
+      "summary": "The philosophical tradition that locates reality, causality, and value entirely within existence — no transcendent God, no external foundation, no ultimate beyond. Technologies of immanence — from feedback systems and narrative to ritual, psychedelics, and code — are expressions of the field they emerge from, participating in it rather than operating upon it from outside. Beginning with Spinoza and culminating in Deleuze's plane of immanence, this tradition provides the philosophical ground for understanding technology as participation.",
+      "why_it_matters": "All the technologies in this lineage — cybernetic, narrative, chemical, corporeal, sexual, cultural, computational — are immanent technologies: they work by modulating the plane of existence from within, without recourse to external authority. This tradition gives us the vocabulary to understand what it means to design, deploy, and inhabit technologies immanently.",
+      "works": [
+        "Spinoza, Ethics (1677)",
+        "Deleuze & Guattari, What is Philosophy? (1991)",
+        "Negri, The Savage Anomaly (1981)"
+      ],
+      "x_hint": 0,
+      "y_hint": -90
+    }
+  ],
+  "edges": [
+    {
+      "source": "wiener",
+      "target": "bateson",
+      "relation": "direct_influence",
+      "weight": 0.9
+    },
+    {
+      "source": "wiener",
+      "target": "ashby",
+      "relation": "direct_influence",
+      "weight": 0.9
+    },
+    {
+      "source": "ashby",
+      "target": "beer",
+      "relation": "direct_influence",
+      "weight": 0.85
+    },
+    {
+      "source": "bateson",
+      "target": "varela",
+      "relation": "direct_influence",
+      "weight": 0.8
+    },
+    {
+      "source": "maturana",
+      "target": "varela",
+      "relation": "direct_influence",
+      "weight": 0.95
+    },
+    {
+      "source": "varela",
+      "target": "enaction",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "bateson",
+      "target": "distributed_cognition",
+      "relation": "direct_influence",
+      "weight": 0.75
+    },
+    {
+      "source": "varela",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.85
+    },
+    {
+      "source": "beer",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.8
+    },
+    {
+      "source": "levin",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.75
+    },
+    {
+      "source": "walker",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.7
+    },
+    {
+      "source": "enaction",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.85
+    },
+    {
+      "source": "distributed_cognition",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.8
+    },
+    {
+      "source": "whitehead",
+      "target": "simondon",
+      "relation": "direct_influence",
+      "weight": 0.8
+    },
+    {
+      "source": "simondon",
+      "target": "deleuze",
+      "relation": "direct_influence",
+      "weight": 0.85
+    },
+    {
+      "source": "deleuze",
+      "target": "guattari",
+      "relation": "direct_influence",
+      "weight": 0.95
+    },
+    {
+      "source": "deleuze",
+      "target": "assemblage",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "guattari",
+      "target": "more_than_human",
+      "relation": "direct_influence",
+      "weight": 0.75
+    },
+    {
+      "source": "massumi",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.8
+    },
+    {
+      "source": "deland",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.7
+    },
+    {
+      "source": "simondon",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.85
+    },
+    {
+      "source": "assemblage",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.85
+    },
+    {
+      "source": "individuation",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.8
+    },
+    {
+      "source": "whitehead",
+      "target": "becoming",
+      "relation": "applied_extension",
+      "weight": 0.85
+    },
+    {
+      "source": "simondon",
+      "target": "individuation",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "deleuze",
+      "target": "becoming",
+      "relation": "applied_extension",
+      "weight": 0.85
+    },
+    {
+      "source": "becoming",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.8
+    },
+    {
+      "source": "mcluhan",
+      "target": "technologies_of_experience",
+      "relation": "direct_influence",
+      "weight": 0.85
+    },
+    {
+      "source": "kittler",
+      "target": "technologies_of_experience",
+      "relation": "direct_influence",
+      "weight": 0.8
+    },
+    {
+      "source": "flusser",
+      "target": "apparatus",
+      "relation": "direct_influence",
+      "weight": 0.8
+    },
+    {
+      "source": "foucault",
+      "target": "apparatus",
+      "relation": "direct_influence",
+      "weight": 0.9
+    },
+    {
+      "source": "stiegler",
+      "target": "experiential_mediation",
+      "relation": "direct_influence",
+      "weight": 0.85
+    },
+    {
+      "source": "apparatus",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.85
+    },
+    {
+      "source": "technologies_of_experience",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "experiential_mediation",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "perceptual_modulation",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.85
+    },
+    {
+      "source": "mcluhan",
+      "target": "perceptual_modulation",
+      "relation": "direct_influence",
+      "weight": 0.7
+    },
+    {
+      "source": "stiegler",
+      "target": "perceptual_modulation",
+      "relation": "direct_influence",
+      "weight": 0.75
+    },
+    {
+      "source": "uexkull",
+      "target": "umwelt",
+      "relation": "applied_extension",
+      "weight": 0.95
+    },
+    {
+      "source": "umwelt",
+      "target": "more_than_human",
+      "relation": "direct_influence",
+      "weight": 0.8
+    },
+    {
+      "source": "haraway",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.85
+    },
+    {
+      "source": "latour",
+      "target": "more_than_human",
+      "relation": "direct_influence",
+      "weight": 0.9
+    },
+    {
+      "source": "stengers",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.8
+    },
+    {
+      "source": "tsing",
+      "target": "feral_ecologies",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "feral_ecologies",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.75
+    },
+    {
+      "source": "more_than_human",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "kohn",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.75
+    },
+    {
+      "source": "barad",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.75
+    },
+    {
+      "source": "ostrom",
+      "target": "metagovernance",
+      "relation": "direct_influence",
+      "weight": 0.8
+    },
+    {
+      "source": "bauwens",
+      "target": "metagovernance",
+      "relation": "direct_influence",
+      "weight": 0.75
+    },
+    {
+      "source": "de_filippi",
+      "target": "open_protocols",
+      "relation": "direct_influence",
+      "weight": 0.8
+    },
+    {
+      "source": "open_protocols",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.85
+    },
+    {
+      "source": "extitutional",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.8
+    },
+    {
+      "source": "metagovernance",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.8
+    },
+    {
+      "source": "collective_intelligence",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.85
+    },
+    {
+      "source": "protocol_underground",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.75
+    },
+    {
+      "source": "artaud",
+      "target": "ritual_technologies",
+      "relation": "direct_influence",
+      "weight": 0.85
+    },
+    {
+      "source": "situationists",
+      "target": "cinema_machine",
+      "relation": "direct_influence",
+      "weight": 0.8
+    },
+    {
+      "source": "afrofuturism",
+      "target": "cinema_machine",
+      "relation": "direct_influence",
+      "weight": 0.75
+    },
+    {
+      "source": "sun_ra",
+      "target": "afrofuturism",
+      "relation": "direct_influence",
+      "weight": 0.8
+    },
+    {
+      "source": "ritual_technologies",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.85
+    },
+    {
+      "source": "altered_states",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.8
+    },
+    {
+      "source": "cinema_machine",
+      "target": "open_machine",
+      "relation": "applied_extension",
+      "weight": 0.85
+    },
+    {
+      "source": "bateson",
+      "target": "guattari",
+      "relation": "conceptual_affinity",
+      "weight": 0.7,
+      "note": "Ecology of mind and ecosophy share deep structural resonances"
+    },
+    {
+      "source": "simondon",
+      "target": "stiegler",
+      "relation": "conceptual_affinity",
+      "weight": 0.85,
+      "note": "Stiegler extends Simondon's technical individuation"
+    },
+    {
+      "source": "mcluhan",
+      "target": "kittler",
+      "relation": "conceptual_affinity",
+      "weight": 0.75,
+      "note": "Media as environment and technical system"
+    },
+    {
+      "source": "haraway",
+      "target": "latour",
+      "relation": "conceptual_affinity",
+      "weight": 0.8,
+      "note": "Shared attention to nonhuman actors and technoscience"
+    },
+    {
+      "source": "varela",
+      "target": "massumi",
+      "relation": "conceptual_affinity",
+      "weight": 0.75,
+      "note": "Autopoiesis and affect theory share event-based ontologies"
+    },
+    {
+      "source": "uexkull",
+      "target": "kohn",
+      "relation": "conceptual_affinity",
+      "weight": 0.8,
+      "note": "Umwelt and forest-thinking both center nonhuman semiosis"
+    },
+    {
+      "source": "ostrom",
+      "target": "beer",
+      "relation": "conceptual_affinity",
+      "weight": 0.7,
+      "note": "Polycentric governance and viable systems both model self-organization"
+    },
+    {
+      "source": "guattari",
+      "target": "tsing",
+      "relation": "conceptual_affinity",
+      "weight": 0.7,
+      "note": "Ecosophy and patchy worlds share multispecies assemblage thinking"
+    },
+    {
+      "source": "stengers",
+      "target": "haraway",
+      "relation": "conceptual_affinity",
+      "weight": 0.85,
+      "note": "Cosmopolitics and companion species share pluralist, more-than-human commitments"
+    },
+    {
+      "source": "foucault",
+      "target": "stiegler",
+      "relation": "conceptual_affinity",
+      "weight": 0.75,
+      "note": "Dispositifs and tertiary retention both analyze how technics shape subjects"
+    },
+    {
+      "source": "open_machine",
+      "target": "openness_vs_control",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "open_machine",
+      "target": "distributed_subjectivity",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "open_machine",
+      "target": "experience_design_politics",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "open_machine",
+      "target": "human_nonhuman_coagency",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "open_machine",
+      "target": "perception_infrastructure",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "open_machine",
+      "target": "media_ritual_mediation",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "open_machine",
+      "target": "collective_sense_making",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "open_machine",
+      "target": "experimental_governance",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "open_machine",
+      "target": "reality_interfaces",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "open_machine",
+      "target": "technologies_freedom_capture",
+      "relation": "applied_extension",
+      "weight": 0.9
+    },
+    {
+      "source": "piketty",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.7,
+      "note": "Capital dynamics as political infrastructure shaping collective agency"
+    },
+    {
+      "source": "piketty",
+      "target": "metagovernance",
+      "relation": "conceptual_affinity",
+      "weight": 0.65,
+      "note": "Inequality as a governance problem requiring systemic redesign"
+    },
+    {
+      "source": "drumm",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.75,
+      "note": "Money as designed infrastructure of collective coordination"
+    },
+    {
+      "source": "drumm",
+      "target": "open_protocols",
+      "relation": "conceptual_affinity",
+      "weight": 0.7,
+      "note": "Monetary systems and open protocols as overlapping forms of collective infrastructure"
+    },
+    {
+      "source": "drumm",
+      "target": "piketty",
+      "relation": "conceptual_affinity",
+      "weight": 0.7,
+      "note": "Shared focus on money and capital as political technologies"
+    },
+    {
+      "source": "buterin",
+      "target": "open_protocols",
+      "relation": "direct_influence",
+      "weight": 0.9,
+      "note": "Ethereum as a paradigmatic open, programmable protocol"
+    },
+    {
+      "source": "buterin",
+      "target": "de_filippi",
+      "relation": "conceptual_affinity",
+      "weight": 0.85,
+      "note": "Both theorize blockchain governance and lex cryptographia"
+    },
+    {
+      "source": "buterin",
+      "target": "metagovernance",
+      "relation": "applied_extension",
+      "weight": 0.75,
+      "note": "Mechanism design as programmable metagovernance"
+    },
+    {
+      "source": "buterin",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.7,
+      "note": "Programmable coordination as open machine thinking"
+    },
+    {
+      "source": "buchman",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.8,
+      "note": "Explicitly connects cybernetics, money, and distributed protocol design"
+    },
+    {
+      "source": "buchman",
+      "target": "open_protocols",
+      "relation": "direct_influence",
+      "weight": 0.85,
+      "note": "Cosmos as interoperable open protocol network"
+    },
+    {
+      "source": "buchman",
+      "target": "buterin",
+      "relation": "conceptual_affinity",
+      "weight": 0.8,
+      "note": "Both building distributed coordination infrastructure through protocol design"
+    },
+    {
+      "source": "buchman",
+      "target": "beer",
+      "relation": "conceptual_affinity",
+      "weight": 0.75,
+      "note": "Buchman explicitly draws on Beer and cybernetics in Cosmos/Tendermint work"
+    },
+    {
+      "source": "buchman",
+      "target": "drumm",
+      "relation": "conceptual_affinity",
+      "weight": 0.7,
+      "note": "Both connect monetary systems to distributed governance design"
+    },
+    {
+      "source": "moten",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.8,
+      "note": "Undercommons and fugitivity as modes of extitutional collective practice"
+    },
+    {
+      "source": "moten",
+      "target": "protocol_underground",
+      "relation": "direct_influence",
+      "weight": 0.85,
+      "note": "The undercommons as the theoretical ground for protocol underground"
+    },
+    {
+      "source": "moten",
+      "target": "extitutional",
+      "relation": "direct_influence",
+      "weight": 0.8,
+      "note": "Fugitive study as extitutional practice"
+    },
+    {
+      "source": "sun_ra",
+      "target": "moten",
+      "relation": "direct_influence",
+      "weight": 0.75,
+      "note": "Sun Ra as ancestor of Black radical aesthetics and world-building Moten theorizes"
+    },
+    {
+      "source": "moten",
+      "target": "hartman",
+      "relation": "conceptual_affinity",
+      "weight": 0.85,
+      "note": "Both work within and from the Black radical tradition; Moten and Hartman are in ongoing dialogue"
+    },
+    {
+      "source": "hartman",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.75,
+      "note": "Critical fabulation as a method of experiential reconstruction and archival imagination"
+    },
+    {
+      "source": "hartman",
+      "target": "technologies_of_experience",
+      "relation": "conceptual_affinity",
+      "weight": 0.7,
+      "note": "Fabulation as a technology of experience recovery and historical mediation"
+    },
+    {
+      "source": "hartman",
+      "target": "cinema_machine",
+      "relation": "conceptual_affinity",
+      "weight": 0.65,
+      "note": "Narrative and fabulation as cinematic-experiential machines for historical encounter"
+    },
+    {
+      "source": "afrofuturism",
+      "target": "hartman",
+      "relation": "conceptual_affinity",
+      "weight": 0.7,
+      "note": "Both operate in the space of speculative reconstruction and alternate Black temporalities"
+    },
+    {
+      "source": "cgoes",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.75,
+      "note": "IBC as model for sovereign interoperability — cooperation without consolidation"
+    },
+    {
+      "source": "cgoes",
+      "target": "open_protocols",
+      "relation": "direct_influence",
+      "weight": 0.95,
+      "note": "IBC is a paradigmatic open interoperability protocol"
+    },
+    {
+      "source": "cgoes",
+      "target": "buchman",
+      "relation": "conceptual_affinity",
+      "weight": 0.9,
+      "note": "Goes and Buchman co-developed IBC and Cosmos protocol architecture"
+    },
+    {
+      "source": "cgoes",
+      "target": "buterin",
+      "relation": "conceptual_affinity",
+      "weight": 0.7,
+      "note": "Different but complementary visions of blockchain interoperability and open protocol design"
+    },
+    {
+      "source": "cgoes",
+      "target": "extitutional",
+      "relation": "conceptual_affinity",
+      "weight": 0.65,
+      "note": "Pluranimity blog explores extitutional and pluralist governance thinking"
+    },
+    {
+      "source": "hutchins",
+      "target": "distributed_cognition",
+      "relation": "applied_extension",
+      "weight": 0.95,
+      "note": "Cognition in the Wild is the empirical foundation of distributed cognition theory"
+    },
+    {
+      "source": "hutchins",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.8,
+      "note": "Distributed cognition as the model for Open Machine's understanding of collective intelligence"
+    },
+    {
+      "source": "bateson",
+      "target": "hutchins",
+      "relation": "direct_influence",
+      "weight": 0.75,
+      "note": "Bateson's ecology of mind informs Hutchins's conception of cognitive systems"
+    },
+    {
+      "source": "negri",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.8,
+      "note": "Multitude and constituent power as models for non-sovereign collective organization"
+    },
+    {
+      "source": "negri",
+      "target": "collective_intelligence",
+      "relation": "direct_influence",
+      "weight": 0.8,
+      "note": "The multitude as a form of distributed constituent intelligence"
+    },
+    {
+      "source": "negri",
+      "target": "protocol_underground",
+      "relation": "conceptual_affinity",
+      "weight": 0.75,
+      "note": "The multitude's immanent self-organization resonates with protocol underground thinking"
+    },
+    {
+      "source": "spinoza",
+      "target": "negri",
+      "relation": "direct_influence",
+      "weight": 0.9,
+      "note": "Negri's foundational work on Spinoza; The Savage Anomaly reads Spinoza as a political theorist of immanent power"
+    },
+    {
+      "source": "negri",
+      "target": "metagovernance",
+      "relation": "conceptual_affinity",
+      "weight": 0.65,
+      "note": "Commonwealth proposes commons governance beyond state and market"
+    },
+    {
+      "source": "spinoza",
+      "target": "deleuze",
+      "relation": "direct_influence",
+      "weight": 0.95,
+      "note": "Deleuze called Spinoza \"the prince of philosophers\"; Spinoza is the foundation of Deleuzian immanence"
+    },
+    {
+      "source": "spinoza",
+      "target": "massumi",
+      "relation": "direct_influence",
+      "weight": 0.85,
+      "note": "Spinozist affect theory is the foundation of Massumi's politics of affect"
+    },
+    {
+      "source": "spinoza",
+      "target": "becoming",
+      "relation": "conceptual_affinity",
+      "weight": 0.8,
+      "note": "Conatus as the striving of being — proto-processual ontology"
+    },
+    {
+      "source": "spinoza",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.7,
+      "note": "Immanence and affect as foundational concepts for Open Machine's non-transcendent design philosophy"
+    },
+    {
+      "source": "nietzsche",
+      "target": "deleuze",
+      "relation": "direct_influence",
+      "weight": 0.9,
+      "note": "Nietzsche and Philosophy (1962) is Deleuze's first major work; Nietzsche is central to Deleuzian becoming"
+    },
+    {
+      "source": "nietzsche",
+      "target": "foucault",
+      "relation": "direct_influence",
+      "weight": 0.85,
+      "note": "Genealogy as method is Nietzsche's; Foucault extends it into power-knowledge analysis"
+    },
+    {
+      "source": "nietzsche",
+      "target": "becoming",
+      "relation": "applied_extension",
+      "weight": 0.85,
+      "note": "Eternal return and will to power as the ontological ground of becoming"
+    },
+    {
+      "source": "nietzsche",
+      "target": "massumi",
+      "relation": "conceptual_affinity",
+      "weight": 0.7,
+      "note": "Will to power as force-affect resonates with Massumi's intensive philosophy"
+    },
+    {
+      "source": "bergson",
+      "target": "whitehead",
+      "relation": "conceptual_affinity",
+      "weight": 0.85,
+      "note": "Both develop process philosophies against mechanistic materialism; Whitehead engaged directly with Bergson"
+    },
+    {
+      "source": "bergson",
+      "target": "deleuze",
+      "relation": "direct_influence",
+      "weight": 0.9,
+      "note": "Bergsonism (1966) is Deleuze's dedicated study; duration and virtuality are Bergsonian concepts"
+    },
+    {
+      "source": "bergson",
+      "target": "simondon",
+      "relation": "direct_influence",
+      "weight": 0.75,
+      "note": "Bergson's vitalism and duration inform Simondon's concept of metastability and individuation"
+    },
+    {
+      "source": "bergson",
+      "target": "becoming",
+      "relation": "applied_extension",
+      "weight": 0.85,
+      "note": "Duration (durée) is the original philosophical articulation of real becoming"
+    },
+    {
+      "source": "spinoza",
+      "target": "philosophy_of_immanence",
+      "relation": "direct_influence",
+      "weight": 1,
+      "note": "Spinoza is the first philosopher of immanence: Deus sive Natura — God is not beyond nature, God IS nature. The Ethics (1677) founds the entire tradition"
+    },
+    {
+      "source": "nietzsche",
+      "target": "philosophy_of_immanence",
+      "relation": "direct_influence",
+      "weight": 0.85,
+      "note": "Will to power as immanent creative force; the eternal return affirms existence without recourse to transcendence"
+    },
+    {
+      "source": "bergson",
+      "target": "philosophy_of_immanence",
+      "relation": "direct_influence",
+      "weight": 0.8,
+      "note": "Duration, élan vital, and creative evolution develop immanence as temporal becoming — life as self-organizing from within"
+    },
+    {
+      "source": "whitehead",
+      "target": "philosophy_of_immanence",
+      "relation": "conceptual_affinity",
+      "weight": 0.75,
+      "note": "Process theology posits an immanent God who is affected by and internal to the world; actual occasions are events of immanent experience"
+    },
+    {
+      "source": "deleuze",
+      "target": "philosophy_of_immanence",
+      "relation": "applied_extension",
+      "weight": 0.95,
+      "note": "What is Philosophy? (1991) explicitly names the 'plane of immanence' as the ground of all thought — pure immanence is 'A Life'"
+    },
+    {
+      "source": "philosophy_of_immanence",
+      "target": "becoming",
+      "relation": "applied_extension",
+      "weight": 0.9,
+      "note": "Becoming is immanence in motion — the refusal of fixed essences in favour of ongoing self-differentiation"
+    },
+    {
+      "source": "philosophy_of_immanence",
+      "target": "maturana",
+      "relation": "conceptual_affinity",
+      "weight": 0.8,
+      "note": "Autopoiesis as radical immanence: living systems are self-causing — their organization is generated from within, not imposed from without"
+    },
+    {
+      "source": "philosophy_of_immanence",
+      "target": "negri",
+      "relation": "direct_influence",
+      "weight": 0.85,
+      "note": "Immanent constituent power against transcendent constituted power; the multitude's self-organization against sovereign authority"
+    },
+    {
+      "source": "philosophy_of_immanence",
+      "target": "haraway",
+      "relation": "conceptual_affinity",
+      "weight": 0.75,
+      "note": "Situated knowledges and the politics of location refuse transcendent objectivity — knowledge is always embedded within the plane of existence"
+    },
+    {
+      "source": "philosophy_of_immanence",
+      "target": "open_machine",
+      "relation": "direct_influence",
+      "weight": 0.9,
+      "note": "Open Machine inherits the immanentist tradition: no transcendent design principles, only emergence and self-organization from within the field of relations"
+    }
+  ]
+}

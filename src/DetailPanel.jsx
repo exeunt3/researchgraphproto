@@ -12,8 +12,74 @@ function hexToRgba(hex, alpha) {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`
 }
 
-export default function DetailPanel({ node, onClose }) {
-  const clusterColor = node ? (COLORS[node.cluster] || '#8a7d6e') : '#8a7d6e'
+const TYPE_LABELS = {
+  open_machine: 'Collective',
+  core: 'Core Concept',
+  concept: 'Concept',
+  tradition: 'Tradition',
+  thinker: 'Thinker',
+  downstream: 'Downstream',
+  'project-expression': 'Project',
+}
+
+const CLUSTER_DISPLAY = {
+  critique: 'Movement I: Critique',
+  archive: 'Movement II: Archive',
+  construction: 'Movement III: Construction',
+  aesthetics: 'Layer 5: Aesthetics',
+  coordination: 'Layer 4: Coordination',
+  infrastructure: 'Layer 3: Infrastructure',
+  epistemology: 'Layer 2: Epistemology',
+  ontology: 'Layer 1: Ontology',
+  core: 'Open Machine',
+  cybernetics: 'Cybernetics',
+  process: 'Process Philosophy',
+  media: 'Media Theory',
+  posthuman: 'Posthumanism',
+  governance: 'Governance',
+  art: 'Art & Performance',
+}
+
+function NodeLink({ nodeId, allNodes, clusterColors, onNodeSelect }) {
+  const n = allNodes && allNodes.find(x => x.id === nodeId)
+  if (!n) return null
+  const color = (clusterColors && clusterColors[n.cluster]) || '#8a7d6e'
+  return (
+    <button
+      onClick={() => onNodeSelect(n)}
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 4,
+        fontFamily: FONT_MONO,
+        fontSize: 9,
+        letterSpacing: '0.06em',
+        textTransform: 'uppercase',
+        color,
+        background: hexToRgba(color, 0.08),
+        border: `1px solid ${hexToRgba(color, 0.3)}`,
+        borderRadius: 4,
+        padding: '2px 6px',
+        cursor: 'pointer',
+        margin: '2px',
+      }}
+    >
+      {n.label || n.name || n.id}
+    </button>
+  )
+}
+
+export default function DetailPanel({
+  node,
+  onClose,
+  isLineage = false,
+  allNodes = null,
+  allEdges = null,
+  clusterColors = null,
+  onNodeSelect = null,
+}) {
+  const colors = clusterColors || COLORS
+  const clusterColor = node ? (colors[node.cluster] || '#8a7d6e') : '#8a7d6e'
 
   useEffect(() => {
     function handleKey(e) {
@@ -23,26 +89,19 @@ export default function DetailPanel({ node, onClose }) {
     return () => window.removeEventListener('keydown', handleKey)
   }, [onClose])
 
-  const TYPE_LABELS = {
-    open_machine: 'Collective',
-    core: 'Core Concept',
-    concept: 'Concept',
-    tradition: 'Tradition',
-    thinker: 'Thinker',
-    downstream: 'Downstream',
-  }
-
-  const CLUSTER_DISPLAY = {
-    critique: 'Movement I: Critique',
-    archive: 'Movement II: Archive',
-    construction: 'Movement III: Construction',
-    aesthetics: 'Layer 5: Aesthetics',
-    coordination: 'Layer 4: Coordination',
-    infrastructure: 'Layer 3: Infrastructure',
-    epistemology: 'Layer 2: Epistemology',
-    ontology: 'Layer 1: Ontology',
-    core: 'Open Machine',
-  }
+  // Compute related nodes for lineage view
+  const relatedNodes = React.useMemo(() => {
+    if (!isLineage || !node || !allEdges) return null
+    const influencedBy = []
+    const influences = []
+    for (const e of allEdges) {
+      const src = typeof e.source === 'object' ? e.source.id : e.source
+      const tgt = typeof e.target === 'object' ? e.target.id : e.target
+      if (src === node.id) influences.push(tgt)
+      if (tgt === node.id) influencedBy.push(src)
+    }
+    return { influencedBy, influences }
+  }, [isLineage, node, allEdges])
 
   return (
     <AnimatePresence>
@@ -105,6 +164,32 @@ export default function DetailPanel({ node, onClose }) {
             overflowY: 'auto',
             padding: '0 20px 24px 20px',
           }}>
+            {/* Portrait image for lineage thinkers */}
+            {isLineage && node.image && (
+              <div style={{
+                marginTop: 20,
+                marginBottom: 12,
+                display: 'flex',
+                justifyContent: 'center',
+              }}>
+                <div style={{
+                  width: 80,
+                  height: 80,
+                  borderRadius: '50%',
+                  overflow: 'hidden',
+                  border: `2px solid ${clusterColor}`,
+                  flexShrink: 0,
+                }}>
+                  <img
+                    src={node.image}
+                    alt={node.label || node.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    onError={e => { e.target.style.display = 'none' }}
+                  />
+                </div>
+              </div>
+            )}
+
             {/* Type badge */}
             <div style={{
               fontFamily: FONT_MONO,
@@ -112,7 +197,7 @@ export default function DetailPanel({ node, onClose }) {
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
               color: clusterColor,
-              marginTop: 16,
+              marginTop: node.image ? 0 : 16,
             }}>
               {TYPE_LABELS[node.type] || node.type}
             </div>
@@ -127,8 +212,21 @@ export default function DetailPanel({ node, onClose }) {
               lineHeight: 1.25,
               paddingRight: 24,
             }}>
-              {node.label}
+              {node.label || node.name}
             </h2>
+
+            {/* Birth/death years for thinkers */}
+            {isLineage && (node.birth_year || node.death_year) && (
+              <div style={{
+                fontFamily: FONT_MONO,
+                fontSize: 10,
+                letterSpacing: '0.08em',
+                color: '#8a7d6e',
+                marginBottom: 4,
+              }}>
+                {node.birth_year || '?'} – {node.death_year || 'present'}
+              </div>
+            )}
 
             {/* Cluster label */}
             <div style={{
@@ -187,13 +285,13 @@ export default function DetailPanel({ node, onClose }) {
             </p>
 
             {/* Why It Matters callout */}
-            {node.whyItMatters && (
+            {(node.whyItMatters || node.why_it_matters) && (
               <div style={{
                 background: `linear-gradient(135deg, ${hexToRgba(clusterColor, 0.10)}, ${hexToRgba(clusterColor, 0.05)})`,
                 borderLeft: `3px solid ${clusterColor}`,
                 borderRadius: '0 6px 6px 0',
                 padding: '12px 16px',
-                marginBottom: 8,
+                marginBottom: 20,
               }}>
                 <div style={{
                   fontFamily: FONT_MONO,
@@ -212,9 +310,95 @@ export default function DetailPanel({ node, onClose }) {
                   lineHeight: 1.65,
                   margin: 0,
                 }}>
-                  {node.whyItMatters}
+                  {node.whyItMatters || node.why_it_matters}
                 </p>
               </div>
+            )}
+
+            {/* Key Works (lineage) */}
+            {isLineage && node.works && node.works.length > 0 && (
+              <div style={{ marginBottom: 20 }}>
+                <div style={{
+                  fontFamily: FONT_MONO,
+                  fontSize: 9,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: '#8a7d6e',
+                  marginBottom: 8,
+                }}>
+                  Key Works
+                </div>
+                <ul style={{ margin: 0, padding: '0 0 0 16px' }}>
+                  {node.works.map((work, i) => (
+                    <li key={i} style={{
+                      fontFamily: FONT_SANS,
+                      fontSize: 12,
+                      fontStyle: 'italic',
+                      color: '#4a4038',
+                      lineHeight: 1.5,
+                      marginBottom: 4,
+                    }}>
+                      {work}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Related nodes (lineage) */}
+            {isLineage && relatedNodes && onNodeSelect && (
+              <>
+                {relatedNodes.influencedBy.length > 0 && (
+                  <div style={{ marginBottom: 16 }}>
+                    <div style={{
+                      fontFamily: FONT_MONO,
+                      fontSize: 9,
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      color: '#8a7d6e',
+                      marginBottom: 6,
+                    }}>
+                      Influenced By
+                    </div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+                      {relatedNodes.influencedBy.map(id => (
+                        <NodeLink
+                          key={id}
+                          nodeId={id}
+                          allNodes={allNodes}
+                          clusterColors={clusterColors}
+                          onNodeSelect={onNodeSelect}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {relatedNodes.influences.length > 0 && (
+                  <div style={{ marginBottom: 16 }}>
+                    <div style={{
+                      fontFamily: FONT_MONO,
+                      fontSize: 9,
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      color: '#8a7d6e',
+                      marginBottom: 6,
+                    }}>
+                      Influences
+                    </div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+                      {relatedNodes.influences.map(id => (
+                        <NodeLink
+                          key={id}
+                          nodeId={id}
+                          allNodes={allNodes}
+                          clusterColors={clusterColors}
+                          onNodeSelect={onNodeSelect}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
             )}
           </div>
         </motion.div>

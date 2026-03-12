@@ -3,6 +3,24 @@ import { COLORS } from './data.js'
 
 const FONT_MONO = "'Courier New', 'JetBrains Mono', 'Fira Code', monospace"
 
+const LINEAGE_LAYER_COLORS = {
+  ontology:       '#5a3a8a',
+  epistemology:   '#3a6ea8',
+  infrastructure: '#c07a28',
+  coordination:   '#2a8a7a',
+  aesthetics:     '#7c5cbf',
+}
+
+const LINEAGE_LAYER_LABELS = {
+  ontology:       'L1 Ontology',
+  epistemology:   'L2 Epistemology',
+  infrastructure: 'L3 Infrastructure',
+  coordination:   'L4 Coordination',
+  aesthetics:     'L5 Aesthetics',
+}
+
+const LINEAGE_LAYERS = ['ontology', 'epistemology', 'infrastructure', 'coordination', 'aesthetics']
+
 function LogoMark() {
   const dotPositions = [0, 1, 2, 3, 4, 5].map(i => {
     const angle = (i / 6) * Math.PI * 2 - Math.PI / 2
@@ -31,6 +49,10 @@ export default function FilterBar({
   activeFilters,
   setActiveFilters,
   nodes,
+  lineageFilters,
+  setLineageFilters,
+  lineageTimelineMode,
+  setLineageTimelineMode,
 }) {
   const clusters = useMemo(() => {
     const seen = new Set()
@@ -62,7 +84,28 @@ export default function FilterBar({
     }
   }
 
+  function toggleLineageCluster(layer) {
+    const next = new Set(lineageFilters)
+    if (next.has(layer)) {
+      if (next.size > 1) next.delete(layer)
+    } else {
+      next.add(layer)
+    }
+    setLineageFilters(next)
+  }
+
+  function toggleAllLineageClusters() {
+    if (lineageFilters.size === LINEAGE_LAYERS.length) {
+      setLineageFilters(new Set([LINEAGE_LAYERS[0]]))
+    } else {
+      setLineageFilters(new Set(LINEAGE_LAYERS))
+    }
+  }
+
   const allActive = activeFilters.size === clusters.length
+  const allLineageActive = lineageFilters && lineageFilters.size === LINEAGE_LAYERS.length
+
+  const isLineage = activeVision === 'lineage'
 
   return (
     <div style={{
@@ -140,69 +183,175 @@ export default function FilterBar({
         >
           The Protocol Stack
         </button>
+        <button
+          onClick={() => setActiveVision('lineage')}
+          style={{
+            fontFamily: FONT_MONO,
+            fontSize: 10,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            padding: '4px 10px',
+            borderRadius: 3,
+            border: activeVision === 'lineage' ? '1px solid #1e50a2' : '1px solid #c8baa8',
+            background: activeVision === 'lineage' ? '#1e50a2' : 'transparent',
+            color: activeVision === 'lineage' ? '#f4f0e6' : '#8a7d6e',
+            cursor: 'pointer',
+            transition: 'all 0.15s ease',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          Lineage
+        </button>
       </div>
 
       {/* Divider */}
       <div style={{ width: 1, height: 20, background: '#c8baa8', flexShrink: 0 }} />
 
-      {/* Filter pills container */}
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 5,
-        overflowX: 'auto',
-        flex: 1,
-        scrollbarWidth: 'none',
-      }}>
-        {/* All toggle */}
-        <button
-          onClick={toggleAllClusters}
-          style={{
-            fontFamily: FONT_MONO,
-            fontSize: 9,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            padding: '3px 8px',
-            borderRadius: 9999,
-            border: allActive ? '1px solid #8a7d6e' : '1px solid #c8baa8',
-            background: allActive ? 'rgba(26,21,16,0.07)' : 'transparent',
-            color: allActive ? '#4a4035' : '#8a7d6e',
-            cursor: 'pointer',
-            whiteSpace: 'nowrap',
-            flexShrink: 0,
-          }}
-        >
-          All
-        </button>
+      {/* Filter pills — v2/v3 mode */}
+      {!isLineage && (
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 5,
+          overflowX: 'auto',
+          flex: 1,
+          scrollbarWidth: 'none',
+        }}>
+          <button
+            onClick={toggleAllClusters}
+            style={{
+              fontFamily: FONT_MONO,
+              fontSize: 9,
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              padding: '3px 8px',
+              borderRadius: 9999,
+              border: allActive ? '1px solid #8a7d6e' : '1px solid #c8baa8',
+              background: allActive ? 'rgba(26,21,16,0.07)' : 'transparent',
+              color: allActive ? '#4a4035' : '#8a7d6e',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
+            }}
+          >
+            All
+          </button>
 
-        {clusters.map(cluster => {
-          const color = COLORS[cluster] || '#8a7d6e'
-          const active = activeFilters.has(cluster)
-          return (
-            <button
-              key={cluster}
-              onClick={() => toggleCluster(cluster)}
-              style={{
-                fontFamily: FONT_MONO,
-                fontSize: 9,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                padding: '3px 8px',
-                borderRadius: 9999,
-                border: active ? `1px solid ${color}` : '1px solid #c8baa8',
-                background: active ? `${color}2e` : 'transparent',
-                color: active ? color : '#8a7d6e',
-                cursor: 'pointer',
-                whiteSpace: 'nowrap',
-                flexShrink: 0,
-                transition: 'all 0.15s ease',
-              }}
-            >
-              {cluster}
-            </button>
-          )
-        })}
-      </div>
+          {clusters.map(cluster => {
+            const color = COLORS[cluster] || '#8a7d6e'
+            const active = activeFilters.has(cluster)
+            return (
+              <button
+                key={cluster}
+                onClick={() => toggleCluster(cluster)}
+                style={{
+                  fontFamily: FONT_MONO,
+                  fontSize: 9,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  padding: '3px 8px',
+                  borderRadius: 9999,
+                  border: active ? `1px solid ${color}` : '1px solid #c8baa8',
+                  background: active ? `${color}2e` : 'transparent',
+                  color: active ? color : '#8a7d6e',
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                {cluster}
+              </button>
+            )
+          })}
+        </div>
+      )}
+
+      {/* Filter pills + timeline toggle — lineage mode */}
+      {isLineage && (
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 5,
+          overflowX: 'auto',
+          flex: 1,
+          scrollbarWidth: 'none',
+        }}>
+          {/* Timeline toggle */}
+          <button
+            onClick={() => setLineageTimelineMode(m => !m)}
+            style={{
+              fontFamily: FONT_MONO,
+              fontSize: 9,
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              padding: '3px 10px',
+              borderRadius: 3,
+              border: lineageTimelineMode ? '1px solid #1e50a2' : '1px solid #c8baa8',
+              background: lineageTimelineMode ? 'rgba(30,80,162,0.12)' : 'transparent',
+              color: lineageTimelineMode ? '#1e50a2' : '#8a7d6e',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
+              transition: 'all 0.15s ease',
+            }}
+          >
+            ⟷ Timeline
+          </button>
+
+          {/* Separator */}
+          <div style={{ width: 1, height: 16, background: '#c8baa8', flexShrink: 0, margin: '0 2px' }} />
+
+          {/* All lineage toggle */}
+          <button
+            onClick={toggleAllLineageClusters}
+            style={{
+              fontFamily: FONT_MONO,
+              fontSize: 9,
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              padding: '3px 8px',
+              borderRadius: 9999,
+              border: allLineageActive ? '1px solid #8a7d6e' : '1px solid #c8baa8',
+              background: allLineageActive ? 'rgba(26,21,16,0.07)' : 'transparent',
+              color: allLineageActive ? '#4a4035' : '#8a7d6e',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
+            }}
+          >
+            All
+          </button>
+
+          {LINEAGE_LAYERS.map(layer => {
+            const color = LINEAGE_LAYER_COLORS[layer] || '#8a7d6e'
+            const active = lineageFilters && lineageFilters.has(layer)
+            return (
+              <button
+                key={layer}
+                onClick={() => toggleLineageCluster(layer)}
+                style={{
+                  fontFamily: FONT_MONO,
+                  fontSize: 9,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  padding: '3px 8px',
+                  borderRadius: 9999,
+                  border: active ? `1px solid ${color}` : '1px solid #c8baa8',
+                  background: active ? `${color}2e` : 'transparent',
+                  color: active ? color : '#8a7d6e',
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                {LINEAGE_LAYER_LABELS[layer]}
+              </button>
+            )
+          })}
+        </div>
+      )}
     </div>
   )
 }
