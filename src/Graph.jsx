@@ -680,16 +680,19 @@ export default function Graph({
         width: '100%',
         height: '100%',
         display: 'block',
-        background: '#e8e4d8',
+        background: '#f4f0e6',
       }}
       onClick={handleBgClick}
     >
       <defs>
-        {/* Background gradient */}
-        <radialGradient id="bg-grad" cx="50%" cy="50%" r="60%">
-          <stop offset="0%" stopColor="#ede9dc" />
-          <stop offset="100%" stopColor="#e8e4d8" />
-        </radialGradient>
+        {/* Graph paper grid patterns */}
+        <pattern id="grid-minor" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ddd5c4" strokeWidth="0.35" />
+        </pattern>
+        <pattern id="grid-major" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect width="100" height="100" fill="url(#grid-minor)" />
+          <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#c8baa8" strokeWidth="0.7" />
+        </pattern>
         {/* Drop shadow filter for selected cards */}
         <filter id="card-shadow" x="-20%" y="-20%" width="140%" height="140%">
           <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="rgba(0,0,0,0.15)" />
@@ -708,11 +711,12 @@ export default function Graph({
         </marker>
       </defs>
 
-      {/* Background */}
-      <rect width={width || '100%'} height={height || '100%'} fill="url(#bg-grad)" />
-
       {/* Main canvas group — managed by D3 zoom */}
       <g id="canvas">
+        {/* ── Graph paper background (scrolls/zooms with content) ── */}
+        <rect x="-6000" y="-6000" width="12000" height="12000" fill="#f4f0e6" />
+        <rect x="-6000" y="-6000" width="12000" height="12000" fill="url(#grid-major)" />
+
         {/* ── Connections (drawn behind everything) ── */}
         <g id="connections">
           {layout.connections.map(conn => (
