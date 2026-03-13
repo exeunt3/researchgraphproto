@@ -55,8 +55,8 @@ function computeV2Layout(nodes, width, height) {
   MOVEMENTS.forEach((movement, colIdx) => {
     const color = COLORS[movement.cluster] || '#8a7d6e'
 
-    // Zone center: spread evenly across width, vertically centered
-    const zoneCx = width * (0.18 + colIdx * 0.32)
+    // Zone center: spread wide so clouds have clear breathing room
+    const zoneCx = width * (0.12 + colIdx * 0.38)
     const zoneCy = height * 0.50
 
     const clusterNodes = nodes.filter(
@@ -492,7 +492,7 @@ function CardRect({ card, isSelected, isRelated, isAnySelected, onClick }) {
 
   // Core hub nodes (movement centers in cloud layout) get solid fill + color text
   const isCore = !!card.isCore
-  const rectFill = isCore ? hexToRgba(color, 0.12) : 'rgba(244,240,230,0.85)'
+  const rectFill = isCore ? hexToRgba(color, 0.18) : hexToRgba(color, 0.09)
   const rectDash = isCore ? null : '4,2.5'
   const rectStrokeW = isCore ? (isSelected ? 2.2 : 1.5) : strokeWidth
   const textFill = isCore ? color : TEXT_PRIMARY
