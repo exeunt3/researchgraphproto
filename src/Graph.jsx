@@ -509,25 +509,82 @@ function CardRect({ card, isSelected, isRelated, isAnySelected, onClick }) {
   )
 }
 
+// ── Cloud blob helpers ────────────────────────────────────────────────────────
+
+function stringHash(str) {
+  let h = 5381
+  for (let i = 0; i < str.length; i++) h = (Math.imul(h, 33) ^ str.charCodeAt(i)) >>> 0
+  return h
+}
+
+function generateCloudPath(x, y, w, h, cluster) {
+  const seed = stringHash(cluster)
+  const cx = x + w / 2
+  const cy = y + h / 2
+  const rx = w / 2
+  const ry = h / 2
+  const N = 18
+  const a1 = ((seed % 1000) / 1000) * Math.PI * 2
+  const a2 = (((seed >> 10) % 1000) / 1000) * Math.PI * 2
+
+  const pts = []
+  for (let i = 0; i < N; i++) {
+    const angle = (i / N) * Math.PI * 2 - Math.PI / 2
+    const v = 0.88
+      + 0.10 * Math.sin(a1 + i * 2.39)
+      + 0.05 * Math.cos(a2 + i * 1.61)
+    pts.push({
+      x: cx + rx * v * Math.cos(angle),
+      y: cy + ry * v * Math.sin(angle),
+    })
+  }
+
+  const n = pts.length
+  let d = `M${pts[0].x.toFixed(1)},${pts[0].y.toFixed(1)}`
+  for (let i = 0; i < n; i++) {
+    const p0 = pts[(i - 1 + n) % n]
+    const p1 = pts[i]
+    const p2 = pts[(i + 1) % n]
+    const p3 = pts[(i + 2) % n]
+    const c1x = p1.x + (p2.x - p0.x) / 6
+    const c1y = p1.y + (p2.y - p0.y) / 6
+    const c2x = p2.x - (p3.x - p1.x) / 6
+    const c2y = p2.y - (p3.y - p1.y) / 6
+    d += ` C${c1x.toFixed(1)},${c1y.toFixed(1)} ${c2x.toFixed(1)},${c2y.toFixed(1)} ${p2.x.toFixed(1)},${p2.y.toFixed(1)}`
+  }
+  return d + 'Z'
+}
+
 // ── Territory component ───────────────────────────────────────────────────────
 
 function TerritoryRect({ territory, activeVision }) {
   const color = territory.clusterColor
 
+  const background = activeVision === 'v2' ? (
+    <path
+      d={generateCloudPath(territory.x, territory.y, territory.width, territory.height, territory.cluster)}
+      fill={hexToRgba(color, 0.06)}
+      stroke={color}
+      strokeWidth={1.5}
+      strokeOpacity={0.5}
+    />
+  ) : (
+    <rect
+      x={territory.x}
+      y={territory.y}
+      width={territory.width}
+      height={territory.height}
+      rx={4}
+      ry={4}
+      fill={hexToRgba(color, 0.04)}
+      stroke={color}
+      strokeWidth={1}
+    />
+  )
+
   return (
     <g className="territory-group">
-      {/* Territory background */}
-      <rect
-        x={territory.x}
-        y={territory.y}
-        width={territory.width}
-        height={territory.height}
-        rx={4}
-        ry={4}
-        fill={hexToRgba(color, 0.04)}
-        stroke={color}
-        strokeWidth={1}
-      />
+      {background}
 
       {/* Territory label header (muted, small) */}
       <text
