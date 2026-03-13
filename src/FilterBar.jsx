@@ -165,25 +165,6 @@ export default function FilterBar({
           Three Movements
         </button>
         <button
-          onClick={() => setActiveVision('v3')}
-          style={{
-            fontFamily: FONT_MONO,
-            fontSize: 10,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            padding: '4px 10px',
-            borderRadius: 3,
-            border: activeVision === 'v3' ? '1px solid #1a1510' : '1px solid #c8baa8',
-            background: activeVision === 'v3' ? '#1a1510' : 'transparent',
-            color: activeVision === 'v3' ? '#f4f0e6' : '#8a7d6e',
-            cursor: 'pointer',
-            transition: 'all 0.15s ease',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          The Protocol Stack
-        </button>
-        <button
           onClick={() => setActiveVision('lineage')}
           style={{
             fontFamily: FONT_MONO,

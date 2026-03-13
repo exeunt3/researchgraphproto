@@ -28,7 +28,7 @@ export const VISION_2 = {
     // Movement I: Critique
     {
       id: 'critique',
-      label: 'The Critique of Transcendence',
+      label: 'The Critique of Control',
       type: 'core',
       cluster: 'critique',
       radius: 22,
@@ -77,6 +77,16 @@ export const VISION_2 = {
       tags: ['cognition', 'anthropocentrism', 'intelligence'],
     },
     {
+      id: 'critique_emanationism',
+      label: 'The Critique of Emanationism',
+      type: 'concept',
+      cluster: 'critique',
+      radius: 15,
+      summary: 'A critique of emanationist frameworks — systems in which power, meaning, or being radiates outward from a single transcendent source, structuring hierarchy from the top down.',
+      whyItMatters: 'Emanationism is the metaphysical grammar of centralized control. Dismantling it philosophically is a precondition for building genuinely distributed systems.',
+      tags: ['critique', 'philosophy', 'metaphysics', 'immanence'],
+    },
+    {
       id: 'symbolic_misery',
       label: 'Symbolic Misery',
       type: 'concept',
@@ -90,7 +100,7 @@ export const VISION_2 = {
     // Movement II: Archive
     {
       id: 'archive',
-      label: 'The Underground as Archive',
+      label: 'Investigation of the Archive',
       type: 'core',
       cluster: 'archive',
       radius: 22,
@@ -139,6 +149,26 @@ export const VISION_2 = {
       tags: ['cosmo-localism', 'local', 'global', 'bioregion'],
     },
     {
+      id: 'cogsec_strategies',
+      label: "1960's & 70's CogSec Strategies",
+      type: 'concept',
+      cluster: 'archive',
+      radius: 15,
+      summary: "Cognitive security strategies developed in 1960s and 70s countercultural and activist contexts — techniques for protecting and cultivating epistemic autonomy against institutional capture.",
+      whyItMatters: "These strategies represent an early, practical archive of methods for maintaining cognitive sovereignty under conditions of mass media saturation and psychological operations.",
+      tags: ['history', 'cognition', 'sovereignty', 'counterculture'],
+    },
+    {
+      id: 'lineage_immanence',
+      label: 'The Lineage of Immanence',
+      type: 'concept',
+      cluster: 'archive',
+      radius: 15,
+      summary: 'The historical thread of immanent philosophy — from Spinoza through Nietzsche, Bergson, Whitehead, and Deleuze — as an active intellectual archive recoverable for contemporary use.',
+      whyItMatters: 'The lineage of immanence is not just history but a living protocol: a set of conceptual tools refined across centuries for thinking power, creativity, and agency without transcendence.',
+      tags: ['history', 'philosophy', 'immanence', 'lineage'],
+    },
+    {
       id: 'extitutions',
       label: 'Extitutions',
       type: 'concept',
@@ -152,7 +182,7 @@ export const VISION_2 = {
     // Movement III: Construction
     {
       id: 'construction',
-      label: 'Construction: Immanent Technology',
+      label: 'The Construction of Immanent Technology',
       type: 'core',
       cluster: 'construction',
       radius: 22,
@@ -221,11 +251,14 @@ export const VISION_2 = {
     { source: 'critique',     target: 'ontological_hierarchy', type: 'direct_influence', weight: 1 },
     { source: 'critique',     target: 'mind_blindness',      type: 'direct_influence',   weight: 1 },
     { source: 'critique',     target: 'symbolic_misery',     type: 'direct_influence',   weight: 1 },
+    { source: 'critique',     target: 'critique_emanationism', type: 'direct_influence', weight: 1 },
     { source: 'archive',      target: 'protocol_underground', type: 'direct_influence',  weight: 1 },
     { source: 'archive',      target: 'isomorphism',         type: 'direct_influence',   weight: 1 },
     { source: 'archive',      target: 'undercapital',        type: 'direct_influence',   weight: 1 },
     { source: 'archive',      target: 'cosmo_local',         type: 'direct_influence',   weight: 1 },
     { source: 'archive',      target: 'extitutions',         type: 'direct_influence',   weight: 1 },
+    { source: 'archive',      target: 'cogsec_strategies',   type: 'direct_influence',   weight: 1 },
+    { source: 'archive',      target: 'lineage_immanence',   type: 'direct_influence',   weight: 1 },
     { source: 'construction', target: 'diverse_intel',       type: 'direct_influence',   weight: 1 },
     { source: 'construction', target: 'open_protocol_infra', type: 'direct_influence',   weight: 1 },
     { source: 'construction', target: 'immanent_criteria',   type: 'direct_influence',   weight: 1 },

@@ -45,9 +45,9 @@ function computeV2Layout(nodes, width, height) {
   const colHeight = height - topPad * 2
 
   const MOVEMENTS = [
-    { cluster: 'critique',     label: 'Movement I' },
-    { cluster: 'archive',      label: 'Movement II' },
-    { cluster: 'construction', label: 'Movement III' },
+    { cluster: 'critique',     label: 'Movement 1' },
+    { cluster: 'archive',      label: 'Movement 2' },
+    { cluster: 'construction', label: 'Movement 3' },
   ]
 
   const cardWidth = colWidth - 28
@@ -491,7 +491,7 @@ function CardRect({ card, isSelected, isRelated, isAnySelected, onClick }) {
         textAnchor="middle"
         fontFamily={FONT_MONO}
         fontSize={card.v3 ? 9 : 9.5}
-        fill={color}
+        fill={TEXT_PRIMARY}
         letterSpacing="0.06em"
         pointerEvents="none"
       >
