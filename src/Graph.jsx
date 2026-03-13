@@ -35,41 +35,40 @@ function splitLabel(label, maxChars = 20) {
   return rest.length > 0 ? [best, rest] : [best]
 }
 
-// ── V2 Layout: Three Columns ──────────────────────────────────────────────────
+// ── V2 Layout: Three Node Clouds ─────────────────────────────────────────────
 
 function computeV2Layout(nodes, width, height) {
-  const sidePad = 36
-  const topPad = 36
-  const colGap = 20
-  const colWidth = (width - sidePad * 2 - colGap * 2) / 3
-  const colHeight = height - topPad * 2
-
   const MOVEMENTS = [
     { cluster: 'critique',     label: 'Movement 1' },
     { cluster: 'archive',      label: 'Movement 2' },
     { cluster: 'construction', label: 'Movement 3' },
   ]
 
-  const cardWidth = colWidth - 28
-  const cardHeight = 68
-  const cardGap = 8
-  const cardStartY = 56 // below the header labels
+  const cardW = 118
+  const cardH = 50
+  const coreW = 150
+  const coreH = 44
 
   const territories = []
   const cards = []
 
   MOVEMENTS.forEach((movement, colIdx) => {
     const color = COLORS[movement.cluster] || '#8a7d6e'
-    const tx = sidePad + colIdx * (colWidth + colGap)
-    const ty = topPad
 
-    // Collect nodes for this cluster (excluding core/open_machine)
+    // Zone center: spread evenly across width, vertically centered
+    const zoneCx = width * (0.18 + colIdx * 0.32)
+    const zoneCy = height * 0.50
+
     const clusterNodes = nodes.filter(
       n => n.cluster === movement.cluster && n.type !== 'core'
     )
     const coreNode = nodes.find(
       n => n.cluster === movement.cluster && n.type === 'core'
     )
+
+    const N = clusterNodes.length
+    // Radius grows with node count so cards don't overlap
+    const ringR = Math.max(130, N * 23)
 
     territories.push({
       id: `territory-${movement.cluster}`,
@@ -78,47 +77,68 @@ function computeV2Layout(nodes, width, height) {
       label: movement.label,
       coreLabel: coreNode ? coreNode.label : movement.cluster,
       coreNodeId: coreNode ? coreNode.id : null,
-      x: tx,
-      y: ty,
-      width: colWidth,
-      height: colHeight,
+      // cx/cy used by TerritoryRect for label placement
+      cx: zoneCx,
+      labelY: zoneCy - ringR - 48,
+      // legacy bounds (used by zoom-to-fit)
+      x: zoneCx - ringR - cardW,
+      y: zoneCy - ringR - cardH,
+      width: (ringR + cardW) * 2,
+      height: (ringR + cardH) * 2,
     })
 
-    // Cards for concept nodes
-    clusterNodes.forEach((node, cardIdx) => {
-      const cx = tx + (colWidth - cardWidth) / 2
-      const cy = ty + cardStartY + cardIdx * (cardHeight + cardGap)
+    // Core node at zone center
+    if (coreNode) {
+      cards.push({
+        nodeId: coreNode.id,
+        node: coreNode,
+        cluster: movement.cluster,
+        clusterColor: color,
+        label: coreNode.label,
+        x: zoneCx - coreW / 2,
+        y: zoneCy - coreH / 2,
+        width: coreW,
+        height: coreH,
+        isCore: true,
+      })
+    }
+
+    // Concept nodes arranged in a ring around core
+    // Stagger odd-indexed nodes to a slightly larger radius for visual depth
+    clusterNodes.forEach((node, i) => {
+      const angle = (i / N) * Math.PI * 2 - Math.PI / 2 + colIdx * 0.22
+      const r = ringR + (i % 2 === 1 ? 20 : 0)
+      const nx = zoneCx + r * Math.cos(angle)
+      const ny = zoneCy + r * Math.sin(angle)
       cards.push({
         nodeId: node.id,
         node: node,
         cluster: movement.cluster,
         clusterColor: color,
         label: node.label,
-        x: cx,
-        y: cy,
-        width: cardWidth,
-        height: cardHeight,
+        x: nx - cardW / 2,
+        y: ny - cardH / 2,
+        width: cardW,
+        height: cardH,
       })
     })
   })
 
-  // open_machine: floating banner above all columns, centered
+  // Open Machine: floating at top center
   const omNode = nodes.find(n => n.type === 'open_machine')
   if (omNode) {
-    const omWidth = colWidth * 1.4
-    const omHeight = 36
-    const omX = width / 2 - omWidth / 2
-    const omY = topPad / 2 - omHeight / 2
+    const omW = 148
+    const omH = 34
     cards.push({
       nodeId: omNode.id,
       node: omNode,
       cluster: 'core',
       clusterColor: COLORS['core'] || '#1a1510',
       label: omNode.label,
-      x: omX,
-      y: omY,
-      width: omWidth,
-      height: omHeight,
+      x: width / 2 - omW / 2,
+      y: 28,
+      width: omW,
+      height: omH,
       isOpenMachine: true,
     })
   }
@@ -260,7 +280,9 @@ function computeConnections(edges, cards, activeVision) {
         y2 = tgt.y + tgt.height / 2
       }
 
-      const cpOffset = 60
+      // Scale control-point offset to ~25% of horizontal distance for graceful arcs
+      const dx = Math.abs(tgtCenterX - srcCenterX)
+      const cpOffset = Math.max(60, dx * 0.25)
       const cp1x = x1 + (srcCenterX < tgtCenterX ? cpOffset : -cpOffset)
       const cp1y = y1
       const cp2x = x2 + (srcCenterX < tgtCenterX ? -cpOffset : cpOffset)
@@ -468,6 +490,14 @@ function CardRect({ card, isSelected, isRelated, isAnySelected, onClick }) {
   const totalTextHeight = lines.length * lineHeight
   const firstLineY = textY - (totalTextHeight / 2) + lineHeight / 2
 
+  // Core hub nodes (movement centers in cloud layout) get solid fill + color text
+  const isCore = !!card.isCore
+  const rectFill = isCore ? hexToRgba(color, 0.12) : 'rgba(244,240,230,0.85)'
+  const rectDash = isCore ? null : '4,2.5'
+  const rectStrokeW = isCore ? (isSelected ? 2.2 : 1.5) : strokeWidth
+  const textFill = isCore ? color : TEXT_PRIMARY
+  const textWeight = isCore ? 'bold' : undefined
+
   return (
     <g
       className="card-group"
@@ -481,17 +511,18 @@ function CardRect({ card, isSelected, isRelated, isAnySelected, onClick }) {
         height={card.height}
         rx={3}
         ry={3}
-        fill="rgba(244,240,230,0.85)"
+        fill={rectFill}
         stroke={color}
-        strokeWidth={strokeWidth}
-        strokeDasharray="4,2.5"
+        strokeWidth={rectStrokeW}
+        strokeDasharray={rectDash || undefined}
         strokeOpacity={strokeOpacity}
       />
       <text
         textAnchor="middle"
         fontFamily={FONT_MONO}
         fontSize={card.v3 ? 9 : 9.5}
-        fill={TEXT_PRIMARY}
+        fill={textFill}
+        fontWeight={textWeight}
         letterSpacing="0.06em"
         pointerEvents="none"
       >
@@ -509,87 +540,49 @@ function CardRect({ card, isSelected, isRelated, isAnySelected, onClick }) {
   )
 }
 
-// ── Cloud blob helpers ────────────────────────────────────────────────────────
-
-function stringHash(str) {
-  let h = 5381
-  for (let i = 0; i < str.length; i++) h = (Math.imul(h, 33) ^ str.charCodeAt(i)) >>> 0
-  return h
-}
-
-function generateCloudPath(x, y, w, h, cluster) {
-  const seed = stringHash(cluster)
-  const cx = x + w / 2
-  const cy = y + h / 2
-  const rx = w / 2
-  const ry = h / 2
-  const N = 18
-  const a1 = ((seed % 1000) / 1000) * Math.PI * 2
-  const a2 = (((seed >> 10) % 1000) / 1000) * Math.PI * 2
-
-  const pts = []
-  for (let i = 0; i < N; i++) {
-    const angle = (i / N) * Math.PI * 2 - Math.PI / 2
-    const v = 0.88
-      + 0.10 * Math.sin(a1 + i * 2.39)
-      + 0.05 * Math.cos(a2 + i * 1.61)
-    pts.push({
-      x: cx + rx * v * Math.cos(angle),
-      y: cy + ry * v * Math.sin(angle),
-    })
-  }
-
-  const n = pts.length
-  let d = `M${pts[0].x.toFixed(1)},${pts[0].y.toFixed(1)}`
-  for (let i = 0; i < n; i++) {
-    const p0 = pts[(i - 1 + n) % n]
-    const p1 = pts[i]
-    const p2 = pts[(i + 1) % n]
-    const p3 = pts[(i + 2) % n]
-    const c1x = p1.x + (p2.x - p0.x) / 6
-    const c1y = p1.y + (p2.y - p0.y) / 6
-    const c2x = p2.x - (p3.x - p1.x) / 6
-    const c2y = p2.y - (p3.y - p1.y) / 6
-    d += ` C${c1x.toFixed(1)},${c1y.toFixed(1)} ${c2x.toFixed(1)},${c2y.toFixed(1)} ${p2.x.toFixed(1)},${p2.y.toFixed(1)}`
-  }
-  return d + 'Z'
-}
-
 // ── Territory component ───────────────────────────────────────────────────────
 
 function TerritoryRect({ territory, activeVision }) {
   const color = territory.clusterColor
 
-  const background = activeVision === 'v2' ? (
-    <path
-      d={generateCloudPath(territory.x, territory.y, territory.width, territory.height, territory.cluster)}
-      fill={hexToRgba(color, 0.06)}
-      stroke={color}
-      strokeWidth={1.5}
-      strokeOpacity={0.5}
-    />
-  ) : (
-    <rect
-      x={territory.x}
-      y={territory.y}
-      width={territory.width}
-      height={territory.height}
-      rx={4}
-      ry={4}
-      fill={hexToRgba(color, 0.04)}
-      stroke={color}
-      strokeWidth={1}
-    />
-  )
+  // V2 cloud layout: no background shape, just a floating zone label above the cloud
+  if (activeVision === 'v2') {
+    return (
+      <g className="territory-group">
+        <text
+          x={territory.cx}
+          y={territory.labelY}
+          textAnchor="middle"
+          dominantBaseline="hanging"
+          fontFamily={FONT_MONO}
+          fontSize={8}
+          fill={TEXT_MUTED}
+          letterSpacing="0.14em"
+          pointerEvents="none"
+        >
+          {territory.label.toUpperCase()}
+        </text>
+      </g>
+    )
+  }
 
+  // V3 band layout: keep the rectangle
   return (
     <g className="territory-group">
-      {background}
-
-      {/* Territory label header (muted, small) */}
+      <rect
+        x={territory.x}
+        y={territory.y}
+        width={territory.width}
+        height={territory.height}
+        rx={4}
+        ry={4}
+        fill={hexToRgba(color, 0.04)}
+        stroke={color}
+        strokeWidth={1}
+      />
       <text
-        x={territory.x + (activeVision === 'v3' ? 10 : 12)}
-        y={territory.y + (activeVision === 'v3' ? 10 : 12)}
+        x={territory.x + 10}
+        y={territory.y + 10}
         dominantBaseline="hanging"
         fontFamily={FONT_MONO}
         fontSize={8}
@@ -599,11 +592,9 @@ function TerritoryRect({ territory, activeVision }) {
       >
         {territory.label.toUpperCase()}
       </text>
-
-      {/* Core node / movement name */}
       <text
-        x={territory.x + (activeVision === 'v3' ? 10 : 14)}
-        y={territory.y + (activeVision === 'v3' ? 22 : 24)}
+        x={territory.x + 10}
+        y={territory.y + 22}
         dominantBaseline="hanging"
         fontFamily={FONT_MONO}
         fontSize={11}
@@ -613,7 +604,7 @@ function TerritoryRect({ territory, activeVision }) {
         pointerEvents="none"
       >
         {territory.coreLabel
-          ? territory.coreLabel.toUpperCase().slice(0, activeVision === 'v3' ? 30 : 36)
+          ? territory.coreLabel.toUpperCase().slice(0, 30)
           : ''}
       </text>
     </g>
