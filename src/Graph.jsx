@@ -67,8 +67,10 @@ function computeV2Layout(nodes, width, height) {
     )
 
     const N = clusterNodes.length
-    // Radius grows with node count so cards don't overlap
-    const ringR = Math.max(130, N * 23)
+    const nodeR = 26           // circle node radius
+    const nodeBox = nodeR * 2  // square bounding box for hit detection / zoom-fit
+    // Ring radius grows with node count; circles are compact so can be tighter
+    const ringR = Math.max(110, N * 21)
 
     territories.push({
       id: `territory-${movement.cluster}`,
@@ -77,17 +79,16 @@ function computeV2Layout(nodes, width, height) {
       label: movement.label,
       coreLabel: coreNode ? coreNode.label : movement.cluster,
       coreNodeId: coreNode ? coreNode.id : null,
-      // cx/cy used by TerritoryRect for label placement
       cx: zoneCx,
-      labelY: zoneCy - ringR - 48,
-      // legacy bounds (used by zoom-to-fit)
-      x: zoneCx - ringR - cardW,
-      y: zoneCy - ringR - cardH,
-      width: (ringR + cardW) * 2,
-      height: (ringR + cardH) * 2,
+      labelY: zoneCy - ringR - 52,
+      // bounds used by zoom-to-fit (include label text below circles)
+      x: zoneCx - ringR - nodeBox,
+      y: zoneCy - ringR - nodeBox,
+      width: (ringR + nodeBox) * 2,
+      height: (ringR + nodeBox) * 2 + 28,
     })
 
-    // Core node at zone center
+    // Core node (movement title) stays a rectangle at zone center
     if (coreNode) {
       cards.push({
         nodeId: coreNode.id,
@@ -103,11 +104,10 @@ function computeV2Layout(nodes, width, height) {
       })
     }
 
-    // Concept nodes arranged in a ring around core
-    // Stagger odd-indexed nodes to a slightly larger radius for visual depth
+    // Concept nodes as circles orbiting the core rectangle
     clusterNodes.forEach((node, i) => {
       const angle = (i / N) * Math.PI * 2 - Math.PI / 2 + colIdx * 0.22
-      const r = ringR + (i % 2 === 1 ? 20 : 0)
+      const r = ringR + (i % 2 === 1 ? 18 : 0)
       const nx = zoneCx + r * Math.cos(angle)
       const ny = zoneCy + r * Math.sin(angle)
       cards.push({
@@ -116,10 +116,13 @@ function computeV2Layout(nodes, width, height) {
         cluster: movement.cluster,
         clusterColor: color,
         label: node.label,
-        x: nx - cardW / 2,
-        y: ny - cardH / 2,
-        width: cardW,
-        height: cardH,
+        // bounding box centered on circle (text overhangs below, but zoom-fit uses this)
+        x: nx - nodeBox / 2,
+        y: ny - nodeBox / 2,
+        width: nodeBox,
+        height: nodeBox,
+        isCircleNode: true,
+        nodeRadius: nodeR,
       })
     })
   })
@@ -261,34 +264,18 @@ function computeConnections(edges, cards, activeVision) {
 
     let path = ''
     if (activeVision === 'v2') {
-      // Horizontal bezier from right/left edges of cards
-      // Determine direction: which card is to the left?
-      const srcCenterX = src.x + src.width / 2
-      const tgtCenterX = tgt.x + tgt.width / 2
+      // Center-to-center bezier — works for both circle nodes and rectangles
+      const x1 = src.x + src.width / 2
+      const y1 = src.y + src.height / 2
+      const x2 = tgt.x + tgt.width / 2
+      const y2 = tgt.y + tgt.height / 2
+      const dx = x2 - x1
+      const cpOffset = Math.max(60, Math.abs(dx) * 0.3)
+      const sign = dx >= 0 ? 1 : -1
+      const cp1x = x1 + sign * cpOffset
+      const cp2x = x2 - sign * cpOffset
 
-      let x1, y1, x2, y2
-      if (srcCenterX < tgtCenterX) {
-        // source is left, connect from right edge of src to left edge of tgt
-        x1 = src.x + src.width
-        y1 = src.y + src.height / 2
-        x2 = tgt.x
-        y2 = tgt.y + tgt.height / 2
-      } else {
-        x1 = src.x
-        y1 = src.y + src.height / 2
-        x2 = tgt.x + tgt.width
-        y2 = tgt.y + tgt.height / 2
-      }
-
-      // Scale control-point offset to ~25% of horizontal distance for graceful arcs
-      const dx = Math.abs(tgtCenterX - srcCenterX)
-      const cpOffset = Math.max(60, dx * 0.25)
-      const cp1x = x1 + (srcCenterX < tgtCenterX ? cpOffset : -cpOffset)
-      const cp1y = y1
-      const cp2x = x2 + (srcCenterX < tgtCenterX ? -cpOffset : cpOffset)
-      const cp2y = y2
-
-      path = `M${x1},${y1} C${cp1x},${cp1y} ${cp2x},${cp2y} ${x2},${y2}`
+      path = `M${x1},${y1} C${cp1x},${y1} ${cp2x},${y2} ${x2},${y2}`
     } else {
       // V3: vertical bezier (concept-to-concept cross-layer)
       // Skip layer-to-layer applied_extension — those are drawn as arrows separately
@@ -481,6 +468,56 @@ function CardRect({ card, isSelected, isRelated, isAnySelected, onClick }) {
             {card.label.toUpperCase()}
           </text>
         )}
+      </g>
+    )
+  }
+
+  // ── Circle node (concept nodes in v2 cloud layout) ────────────────────────
+  if (card.isCircleNode) {
+    const cx = card.x + card.width / 2
+    const cy = card.y + card.height / 2
+    const r = card.nodeRadius
+    const circleLines = splitLabel(card.label, 13)
+    return (
+      <g
+        className="card-group"
+        onClick={(e) => { e.stopPropagation(); onClick(card.node) }}
+        style={{ cursor: 'pointer', opacity: cardOpacity, transition: 'opacity 0.2s' }}
+      >
+        {/* Invisible hit rect so label area is also clickable */}
+        <rect
+          x={cx - r - 2} y={cy - r - 2}
+          width={r * 2 + 4} height={r * 2 + 4 + circleLines.length * 11 + 6}
+          fill="transparent" stroke="none"
+        />
+        <circle
+          cx={cx} cy={cy} r={r}
+          fill={hexToRgba(color, 0.15)}
+          stroke={color}
+          strokeWidth={isSelected ? 2.2 : 1.2}
+          strokeOpacity={isSelected ? 1 : 0.8}
+        />
+        {isSelected && (
+          <circle cx={cx} cy={cy} r={r + 5}
+            fill="none" stroke={color} strokeWidth={0.8} strokeOpacity={0.4}
+          />
+        )}
+        {circleLines.map((line, i) => (
+          <text
+            key={i}
+            x={cx}
+            y={cy + r + 10 + i * 11}
+            textAnchor="middle"
+            dominantBaseline="hanging"
+            fontFamily={FONT_MONO}
+            fontSize={8}
+            fill={TEXT_PRIMARY}
+            letterSpacing="0.06em"
+            pointerEvents="none"
+          >
+            {line.toUpperCase()}
+          </text>
+        ))}
       </g>
     )
   }
