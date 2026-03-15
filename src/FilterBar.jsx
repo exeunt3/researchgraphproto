@@ -106,6 +106,7 @@ export default function FilterBar({
   const allLineageActive = lineageFilters && lineageFilters.size === LINEAGE_LAYERS.length
 
   const isLineage = activeVision === 'lineage'
+  const isResearchAreas = activeVision === 'research'
 
   return (
     <div style={{
@@ -183,13 +184,32 @@ export default function FilterBar({
         >
           Lineage
         </button>
+        <button
+          onClick={() => setActiveVision('research')}
+          style={{
+            fontFamily: FONT_MONO,
+            fontSize: 10,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            padding: '4px 10px',
+            borderRadius: 3,
+            border: isResearchAreas ? '1px solid #6b3fa0' : '1px solid #c8baa8',
+            background: isResearchAreas ? '#6b3fa0' : 'transparent',
+            color: isResearchAreas ? '#f4f0e6' : '#8a7d6e',
+            cursor: 'pointer',
+            transition: 'all 0.15s ease',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          Research Areas
+        </button>
       </div>
 
       {/* Divider */}
       <div style={{ width: 1, height: 20, background: '#c8baa8', flexShrink: 0 }} />
 
       {/* Filter pills — v2/v3 mode */}
-      {!isLineage && (
+      {!isLineage && !isResearchAreas && (
         <div style={{
           display: 'flex',
           alignItems: 'center',

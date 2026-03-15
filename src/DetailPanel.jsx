@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { COLORS } from './data.js'
+import { CONCEPTS } from './concepts.js'
 
 const FONT_MONO = "'Courier New', 'JetBrains Mono', 'Fira Code', monospace"
 const FONT_SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
@@ -66,6 +67,94 @@ function NodeLink({ nodeId, allNodes, clusterColors, onNodeSelect }) {
     >
       {n.label || n.name || n.id}
     </button>
+  )
+}
+
+function ConceptCard({ concept, clusterColor }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div
+      style={{
+        borderRadius: 5,
+        border: `1px solid ${hexToRgba(clusterColor, open ? 0.4 : 0.18)}`,
+        background: open ? hexToRgba(clusterColor, 0.06) : 'transparent',
+        marginBottom: 5,
+        overflow: 'hidden',
+        transition: 'background 0.15s, border-color 0.15s',
+      }}
+    >
+      <button
+        onClick={() => setOpen(o => !o)}
+        style={{
+          width: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          padding: '7px 10px',
+          gap: 8,
+        }}
+      >
+        <span style={{
+          fontFamily: FONT_MONO,
+          fontSize: 9.5,
+          letterSpacing: '0.08em',
+          textTransform: 'uppercase',
+          color: open ? clusterColor : '#4a4035',
+          fontWeight: open ? '600' : '400',
+          textAlign: 'left',
+          flex: 1,
+        }}>
+          {concept.title}
+        </span>
+        <span style={{
+          fontFamily: FONT_MONO,
+          fontSize: 11,
+          color: open ? clusterColor : '#8a7d6e',
+          flexShrink: 0,
+          lineHeight: 1,
+        }}>
+          {open ? '−' : '+'}
+        </span>
+      </button>
+      {open && (
+        <p style={{
+          fontFamily: FONT_SANS,
+          fontSize: 12,
+          color: '#4a4038',
+          lineHeight: 1.65,
+          margin: 0,
+          padding: '0 10px 10px 10px',
+        }}>
+          {concept.body}
+        </p>
+      )}
+    </div>
+  )
+}
+
+function ConceptList({ conceptIds, clusterColor }) {
+  const concepts = conceptIds.map(id => CONCEPTS[id]).filter(Boolean)
+  if (concepts.length === 0) return null
+  return (
+    <div style={{ marginBottom: 20 }}>
+      <div style={{ height: 1, background: '#e0d8cc', margin: '4px 0 14px 0' }} />
+      <div style={{
+        fontFamily: FONT_MONO,
+        fontSize: 9,
+        letterSpacing: '0.1em',
+        textTransform: 'uppercase',
+        color: '#8a7d6e',
+        marginBottom: 10,
+      }}>
+        Related Concepts
+      </div>
+      {concepts.map(concept => (
+        <ConceptCard key={concept.id} concept={concept} clusterColor={clusterColor} />
+      ))}
+    </div>
   )
 }
 
@@ -342,6 +431,45 @@ export default function DetailPanel({
                     </li>
                   ))}
                 </ul>
+              </div>
+            )}
+
+            {/* Research Paths (Three Movements — Movement I) */}
+            {!isLineage && node.researchPaths && node.researchPaths.length > 0 && (
+              <div style={{ marginBottom: 20 }}>
+                <div style={{ height: 1, background: '#e0d8cc', margin: '4px 0 14px 0' }} />
+                <div style={{
+                  fontFamily: FONT_MONO,
+                  fontSize: 9,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: '#8a7d6e',
+                  marginBottom: 10,
+                }}>
+                  Proposed Research Paths
+                </div>
+                {node.researchPaths.map((path, i) => (
+                  <div key={i} style={{ marginBottom: 12 }}>
+                    <div style={{
+                      fontFamily: FONT_MONO,
+                      fontSize: 10,
+                      fontWeight: 'bold',
+                      color: clusterColor,
+                      marginBottom: 3,
+                    }}>
+                      {path.title}
+                    </div>
+                    <p style={{
+                      fontFamily: FONT_MONO,
+                      fontSize: 10,
+                      color: '#3a3028',
+                      lineHeight: 1.6,
+                      margin: 0,
+                    }}>
+                      {path.body}
+                    </p>
+                  </div>
+                ))}
               </div>
             )}
 

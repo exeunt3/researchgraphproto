@@ -35,6 +35,7 @@ function splitLabel(label, maxChars = 20) {
   return rest.length > 0 ? [best, rest] : [best]
 }
 
+
 // ── V2 Layout: Three Node Clouds ─────────────────────────────────────────────
 
 function computeV2Layout(nodes, width, height) {
@@ -67,10 +68,10 @@ function computeV2Layout(nodes, width, height) {
     )
 
     const N = clusterNodes.length
-    const nodeR = 26           // circle node radius
+    const nodeR = 16           // circle node radius
     const nodeBox = nodeR * 2  // square bounding box for hit detection / zoom-fit
     // Ring radius grows with node count; circles are compact so can be tighter
-    const ringR = Math.max(110, N * 21)
+    const ringR = Math.max(90, N * 18)
 
     territories.push({
       id: `territory-${movement.cluster}`,
@@ -116,7 +117,6 @@ function computeV2Layout(nodes, width, height) {
         cluster: movement.cluster,
         clusterColor: color,
         label: node.label,
-        // bounding box centered on circle (text overhangs below, but zoom-fit uses this)
         x: nx - nodeBox / 2,
         y: ny - nodeBox / 2,
         width: nodeBox,
@@ -143,6 +143,7 @@ function computeV2Layout(nodes, width, height) {
       width: omW,
       height: omH,
       isOpenMachine: true,
+      wz: 0,
     })
   }
 
@@ -477,12 +478,14 @@ function CardRect({ card, isSelected, isRelated, isAnySelected, onClick }) {
     const cx = card.x + card.width / 2
     const cy = card.y + card.height / 2
     const r = card.nodeRadius
+    const sw = isSelected ? 2.2 : 1.2
     const circleLines = splitLabel(card.label, 13)
+    const finalOpacity = cardOpacity
     return (
       <g
         className="card-group"
         onClick={(e) => { e.stopPropagation(); onClick(card.node) }}
-        style={{ cursor: 'pointer', opacity: cardOpacity, transition: 'opacity 0.2s' }}
+        style={{ cursor: 'pointer', opacity: finalOpacity, transition: 'opacity 0.2s' }}
       >
         {/* Invisible hit rect so label area is also clickable */}
         <rect
@@ -490,23 +493,51 @@ function CardRect({ card, isSelected, isRelated, isAnySelected, onClick }) {
           width={r * 2 + 4} height={r * 2 + 4 + circleLines.length * 11 + 6}
           fill="transparent" stroke="none"
         />
-        <circle
-          cx={cx} cy={cy} r={r}
-          fill={hexToRgba(color, 0.15)}
-          stroke={color}
-          strokeWidth={isSelected ? 2.2 : 1.2}
-          strokeOpacity={isSelected ? 1 : 0.8}
-        />
+        {/* Outer selection ring */}
         {isSelected && (
-          <circle cx={cx} cy={cy} r={r + 5}
-            fill="none" stroke={color} strokeWidth={0.8} strokeOpacity={0.4}
+          <circle cx={cx} cy={cy} r={r + 8}
+            fill="none" stroke={color} strokeWidth={0.9} strokeOpacity={0.5}
           />
         )}
+        {/* Main node circle — paper background */}
+        <circle
+          cx={cx} cy={cy} r={r}
+          fill={PAPER_BG}
+          stroke={color}
+          strokeWidth={sw}
+        />
+        {/* Inner color tint */}
+        <circle cx={cx} cy={cy} r={r - sw} fill={color} opacity={0.07} />
+        {/* Center dot */}
+        <circle cx={cx} cy={cy} r={Math.max(1.8, r * 0.22)} fill={color} opacity={0.85} />
+        {/* Cardinal tick marks */}
+        {[0, 90, 180, 270].map(deg => {
+          const rad = (deg * Math.PI) / 180
+          return (
+            <line key={deg}
+              x1={cx + Math.cos(rad) * (r + 1.5)} y1={cy + Math.sin(rad) * (r + 1.5)}
+              x2={cx + Math.cos(rad) * (r + 5)}   y2={cy + Math.sin(rad) * (r + 5)}
+              stroke={color} strokeWidth={0.8}
+            />
+          )
+        })}
+        {/* Per-path indicator dots — subtle, non-text, just signals branch count */}
+        {!isSelected && card.node.researchPaths && card.node.researchPaths.map((_, i) => {
+          const N = card.node.researchPaths.length
+          const angle = (i / N) * Math.PI * 2 - Math.PI / 2
+          return (
+            <circle key={i}
+              cx={cx + Math.cos(angle) * (r + 7)}
+              cy={cy + Math.sin(angle) * (r + 7)}
+              r={1.4} fill={color} opacity={0.4}
+            />
+          )
+        })}
         {circleLines.map((line, i) => (
           <text
             key={i}
             x={cx}
-            y={cy + r + 10 + i * 11}
+            y={cy + r + 6 + i * 8}
             textAnchor="middle"
             dominantBaseline="hanging"
             fontFamily={FONT_MONO}
@@ -648,6 +679,75 @@ function TerritoryRect({ territory, activeVision }) {
   )
 }
 
+
+// ── Research Path Cards (radial node-cards shown when concept node is selected) ─
+
+function ResearchPathCards({ card }) {
+  const cx = card.x + card.width / 2
+  const cy = card.y + card.height / 2
+  const r = card.nodeRadius || 16
+  const color = card.clusterColor
+  const paths = card.node.researchPaths
+  const N = paths.length
+  const cardW = 112
+  // Radius large enough that cards don't overlap each other tangentially
+  const cardR = Math.max(85, (N * (cardW + 10)) / (2 * Math.PI))
+
+  return (
+    <g id="research-path-cards">
+      {paths.map((path, i) => {
+        const angle = (i / N) * Math.PI * 2 - Math.PI / 2
+        const pcx = cx + Math.cos(angle) * cardR
+        const pcy = cy + Math.sin(angle) * cardR
+        const titleLines = splitLabel(path.title, 17)
+        const lineH = 10
+        const textBlockH = titleLines.length * lineH
+        const cardH = textBlockH + 12
+        const textStartY = pcy - textBlockH / 2 + lineH / 2
+
+        return (
+          <g key={i}>
+            {/* Spoke from circle edge to card — card background covers line end */}
+            <line
+              x1={cx + Math.cos(angle) * (r + 2)}
+              y1={cy + Math.sin(angle) * (r + 2)}
+              x2={pcx}
+              y2={pcy}
+              stroke={color} strokeWidth={0.9} opacity={0.45}
+            />
+            <rect
+              x={pcx - cardW / 2}
+              y={pcy - cardH / 2}
+              width={cardW}
+              height={cardH}
+              rx={3} ry={3}
+              fill={PAPER_BG}
+              stroke={color}
+              strokeWidth={1.5}
+            />
+            {titleLines.map((line, li) => (
+              <text key={li}
+                x={pcx}
+                y={textStartY + li * lineH}
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fontFamily={FONT_MONO}
+                fontSize={8}
+                fontWeight="bold"
+                fill={color}
+                letterSpacing="0.05em"
+                pointerEvents="none"
+              >
+                {line}
+              </text>
+            ))}
+          </g>
+        )
+      })}
+    </g>
+  )
+}
+
 // ── Main Graph component ──────────────────────────────────────────────────────
 
 export default function Graph({
@@ -665,10 +765,12 @@ export default function Graph({
   const zoomRef = useRef(null)
   const didFitRef = useRef(false)
 
+
   // Compute layout from props
   const layout = useMemo(() => {
     return computeLayout(nodes, edges, activeVision, width, height, activeFilters)
   }, [nodes, edges, activeVision, width, height, activeFilters])
+
 
   // Build adjacency set for selected node
   const relatedNodeIds = useMemo(() => {
@@ -683,15 +785,14 @@ export default function Graph({
 
   const isAnySelected = !!selectedNode
 
-  // Handle card click
   const handleCardClick = useCallback((node) => {
     setSelectedNode(prev => (prev && prev.id === node.id) ? null : node)
   }, [setSelectedNode])
 
-  // Handle background click to deselect
   const handleBgClick = useCallback(() => {
     setSelectedNode(null)
   }, [setSelectedNode])
+
 
   // Set up D3 zoom on the SVG
   useEffect(() => {
@@ -702,6 +803,7 @@ export default function Graph({
 
     const zoom = d3.zoom()
       .scaleExtent([0.2, 4])
+      .filter((event) => !event.ctrlKey && !event.button)
       .on('zoom', (event) => {
         const t = event.transform
         const canvas = svg.select('#canvas')
@@ -726,7 +828,6 @@ export default function Graph({
     if (!svgEl || !zoom || !width || !height) return
     if (layout.territories.length === 0 && layout.cards.length === 0) return
 
-    // Compute bounding box of all layout elements
     let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity
     for (const t of layout.territories) {
       minX = Math.min(minX, t.x)
@@ -766,6 +867,7 @@ export default function Graph({
         height: '100%',
         display: 'block',
         background: '#f4f0e6',
+        cursor: 'default',
       }}
       onClick={handleBgClick}
     >
@@ -861,6 +963,14 @@ export default function Graph({
             )
           })}
         </g>
+
+        {/* ── Research path cards — top layer so they're never clipped ── */}
+        {selectedNode && (() => {
+          const card = layout.cards.find(c => c.nodeId === selectedNode.id)
+          if (!card || !card.isCircleNode || !card.node.researchPaths) return null
+          return <ResearchPathCards card={card} />
+        })()}
+
       </g>
     </svg>
   )

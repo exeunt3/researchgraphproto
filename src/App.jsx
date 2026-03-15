@@ -6,6 +6,7 @@ import DetailPanel from './DetailPanel.jsx'
 import MiniMap from './MiniMap.jsx'
 import Graph from './Graph.jsx'
 import LineageGraph from './LineageGraph.jsx'
+import ResearchAreasGraph from './ResearchAreasGraph.jsx'
 
 const FILTERBAR_HEIGHT = 44
 
@@ -58,6 +59,7 @@ export default function App() {
   }, [])
 
   const dataset = activeVision === 'v2' ? VISION_2 : activeVision === 'v3' ? VISION_3 : null
+  const isResearchAreas = activeVision === 'research'
 
   // Initialize activeFilters to all clusters in the current dataset
   const [activeFilters, setActiveFilters] = useState(() => {
@@ -80,8 +82,9 @@ export default function App() {
     setActiveVision(v)
     setSelectedNode(null)
     setTransform({ x: 0, y: 0, k: 1 })
-    if (v === 'v2' || v === 'v3') {
+    if (v === 'v2' || v === 'v3' || v === 'research') {
       const seen = new Set()
+      if (v === 'research') return
       const ds = v === 'v2' ? VISION_2 : VISION_3
       for (const n of ds.nodes) {
         if (n.cluster !== 'core') seen.add(n.cluster)
@@ -100,9 +103,9 @@ export default function App() {
 
   // Build minimap node list from the dataset
   const minimapNodes = useMemo(() => {
-    if (activeVision === 'lineage') return null
+    if (activeVision === 'lineage' || isResearchAreas) return null
     return dataset ? dataset.nodes : null
-  }, [activeVision, dataset])
+  }, [activeVision, dataset, isResearchAreas])
 
   // For lineage minimap, build nodes from positions
   const lineageMinimapNodes = useMemo(() => {
@@ -142,7 +145,15 @@ export default function App() {
           bottom: 0,
         }}
       >
-        {activeVision !== 'lineage' && dataset && (
+        {isResearchAreas && (
+          <ResearchAreasGraph
+            width={dimensions.width}
+            height={dimensions.height}
+            setSelectedNode={setSelectedNode}
+          />
+        )}
+
+        {!isResearchAreas && activeVision !== 'lineage' && dataset && (
           <Graph
             key={activeVision}
             nodes={dataset.nodes}
